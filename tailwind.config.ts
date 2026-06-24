@@ -22,8 +22,8 @@ const config: Config = {
         beige: "#efe7d6",
       },
       fontFamily: {
-        serif: ["var(--font-fraunces)", "Georgia", "serif"],
-        sans: ["var(--font-jakarta)", "system-ui", "sans-serif"],
+        serif: ["var(--font-cormorant)", "Georgia", "serif"],
+        sans: ["var(--font-hanken)", "system-ui", "sans-serif"],
       },
       boxShadow: {
         luxe: "0 30px 80px -20px rgba(15,14,12,0.45)",

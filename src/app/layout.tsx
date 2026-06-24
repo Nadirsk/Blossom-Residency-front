@@ -1,20 +1,22 @@
 import type { Metadata, Viewport } from "next";
-import { Fraunces, Plus_Jakarta_Sans } from "next/font/google";
+import { Cormorant_Garamond, Hanken_Grotesk } from "next/font/google";
 import "./globals.css";
 import SmoothScroll from "@/components/SmoothScroll";
 import { PROJECT, SITE_URL } from "@/lib/data";
 import { buildJsonLd } from "@/lib/seo";
 
-const fraunces = Fraunces({
+// Display: high-contrast classic serif — the luxury voice of the brand.
+const cormorant = Cormorant_Garamond({
   subsets: ["latin"],
-  variable: "--font-fraunces",
+  variable: "--font-cormorant",
   display: "swap",
   weight: ["300", "400", "500", "600", "700"],
 });
 
-const jakarta = Plus_Jakarta_Sans({
+// Body: warm, refined humanist grotesque — premium without reading as a template.
+const hanken = Hanken_Grotesk({
   subsets: ["latin"],
-  variable: "--font-jakarta",
+  variable: "--font-hanken",
   display: "swap",
 });
 
@@ -85,7 +87,7 @@ const jsonLd = buildJsonLd();
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en" className={`${fraunces.variable} ${jakarta.variable}`}>
+    <html lang="en" className={`${cormorant.variable} ${hanken.variable}`}>
       <body className="font-sans" suppressHydrationWarning>
         <script
           type="application/ld+json"

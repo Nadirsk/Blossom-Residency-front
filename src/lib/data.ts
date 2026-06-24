@@ -61,18 +61,18 @@ export const CONFIGURATIONS = [
 ] as const;
 
 export const AMENITIES = [
-  { name: "24x7 Security Service", icon: "ShieldCheck", tint: "slate" },
-  { name: "24-Hour CCTV Surveillance", icon: "Cctv", tint: "blue" },
-  { name: "Landscaped Garden", icon: "Trees", tint: "green" },
-  { name: "Kids Play Area", icon: "ToyBrick", tint: "amber" },
-  { name: "Rooftop Amenities", icon: "Building2", tint: "indigo" },
-  { name: "Yoga & Meditation Deck", icon: "Flower2", tint: "teal" },
-  { name: "Outdoor Gym", icon: "Dumbbell", tint: "gold" },
-  { name: "Sun Bath Beds", icon: "Sun", tint: "orange" },
-  { name: "Sand Pit for Toddlers", icon: "Baby", tint: "sand" },
-  { name: "Bonfire Area", icon: "Flame", tint: "ember" },
-  { name: "Indoor Games Zone", icon: "Gamepad2", tint: "violet" },
-  { name: "Ample Car Parking", icon: "Car", tint: "graphite" },
+  { name: "24x7 Security Service", icon: "ShieldCheck", tint: "slate", img: "/images/amenities/security.jpg" },
+  { name: "24-Hour CCTV Surveillance", icon: "Cctv", tint: "blue", img: "/images/amenities/cctv.jpg" },
+  { name: "Landscaped Garden", icon: "Trees", tint: "green", img: "/images/amenities/garden.jpg" },
+  { name: "Kids Play Area", icon: "ToyBrick", tint: "amber", img: "/images/amenities/kids.jpg" },
+  { name: "Rooftop Amenities", icon: "Building2", tint: "indigo", img: "/images/amenities/rooftop.jpg" },
+  { name: "Yoga & Meditation Deck", icon: "Flower2", tint: "teal", img: "/images/amenities/yoga.jpg" },
+  { name: "Outdoor Gym", icon: "Dumbbell", tint: "gold", img: "/images/amenities/gym.jpg" },
+  { name: "Sun Bath Beds", icon: "Sun", tint: "orange", img: "/images/amenities/sunbath.jpg" },
+  { name: "Sand Pit for Toddlers", icon: "Baby", tint: "sand", img: "/images/amenities/sandpit.jpg" },
+  { name: "Bonfire Area", icon: "Flame", tint: "ember", img: "/images/amenities/bonfire.jpg" },
+  { name: "Indoor Games Zone", icon: "Gamepad2", tint: "violet", img: "/images/amenities/games.jpg" },
+  { name: "Ample Car Parking", icon: "Car", tint: "graphite", img: "/images/amenities/parking.jpg" },
 ] as const;
 
 export const WHY_US = [
