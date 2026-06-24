@@ -27,27 +27,25 @@ export default function Navbar() {
   return (
     <header
       className={`fixed inset-x-0 top-0 z-50 transition-all duration-500 ${
-        scrolled
-          ? "border-b border-white/[0.08] bg-ink/90 py-3 backdrop-blur-xl"
-          : "py-5"
+        scrolled ? "border-b border-white/10 bg-ink/80 py-3 backdrop-blur-xl" : "py-5"
       }`}
     >
       <nav className="container-luxe flex items-center justify-between">
         <a href="#top" className="flex flex-col leading-none">
-          <span className="font-serif text-[22px] font-semibold tracking-wide text-white">
+          <span className="font-serif text-xl font-semibold tracking-wide text-white">
             Blossom <span className="gold-text">Residency</span>
           </span>
-          <span className="mt-0.5 text-[9px] font-medium uppercase tracking-[0.3em] text-gold/70">
+          <span className="mt-0.5 text-[10px] uppercase tracking-[0.32em] text-gold/80">
             by {PROJECT.developer}
           </span>
         </a>
 
-        <div className="hidden items-center gap-7 lg:flex">
+        <div className="hidden items-center gap-8 lg:flex">
           {LINKS.map(([label, href]) => (
             <a
               key={href}
               href={href}
-              className="text-[13px] font-medium text-sand/70 transition-colors hover:text-white"
+              className="relative text-sm font-medium text-sand/80 transition-colors hover:text-white after:absolute after:-bottom-1.5 after:left-0 after:h-px after:w-0 after:bg-gold after:transition-all hover:after:w-full"
             >
               {label}
             </a>
@@ -55,13 +53,10 @@ export default function Navbar() {
         </div>
 
         <div className="hidden items-center gap-3 lg:flex">
-          <a
-            href={`tel:${PROJECT.phoneRaw}`}
-            className="inline-flex items-center gap-2 rounded-full border border-white/15 px-5 py-2.5 text-[13px] font-medium text-sand/80 transition-all hover:border-white/30 hover:text-white"
-          >
-            <Phone size={14} /> {PROJECT.phone}
+          <a href={`tel:${PROJECT.phoneRaw}`} className="btn-ghost !px-5 !py-2.5">
+            <Phone size={15} /> {PROJECT.phone}
           </a>
-          <a href="#enquire" className="btn-gold !px-5 !py-2.5 !text-[13px]">
+          <a href="#enquire" className="btn-gold !px-5 !py-2.5">
             Book Site Visit
           </a>
         </div>
@@ -77,13 +72,13 @@ export default function Navbar() {
 
       {open && (
         <div className="container-luxe mt-3 lg:hidden">
-          <div className="flex flex-col gap-1 rounded-2xl border border-white/10 bg-ink-soft p-4">
+          <div className="glass flex flex-col gap-1 rounded-2xl p-4">
             {LINKS.map(([label, href]) => (
               <a
                 key={href}
                 href={href}
                 onClick={() => setOpen(false)}
-                className="rounded-xl px-4 py-3 text-sm text-sand/80 transition-colors hover:bg-white/5 hover:text-white"
+                className="rounded-xl px-4 py-3 text-sm text-sand/90 hover:bg-white/5"
               >
                 {label}
               </a>

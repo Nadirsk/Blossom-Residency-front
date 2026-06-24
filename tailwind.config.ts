@@ -9,34 +9,30 @@ const config: Config = {
     extend: {
       colors: {
         ink: {
-          DEFAULT: "#111318",
-          soft: "#191C24",
-          mute: "#22262F",
+          DEFAULT: "#0f0e0c",
+          soft: "#1a1815",
+          mute: "#26231f",
         },
         gold: {
-          DEFAULT: "#C4974A",
-          light: "#DDB870",
-          deep: "#9B7428",
+          DEFAULT: "#c9a24b",
+          light: "#e6c878",
+          deep: "#a07e2e",
         },
-        chalk: "#F7F4EE",
-        surface: "#EDE9E3",
-        sand: "#E4DFD7",
-        stone: "#87817A",
-        beige: "#EDE9E1",
+        sand: "#f6f1e7",
+        beige: "#efe7d6",
       },
       fontFamily: {
-        serif: ["var(--font-cormorant)", "Georgia", "serif"],
-        sans: ["var(--font-outfit)", "system-ui", "sans-serif"],
+        serif: ["var(--font-fraunces)", "Georgia", "serif"],
+        sans: ["var(--font-jakarta)", "system-ui", "sans-serif"],
       },
       boxShadow: {
-        luxe: "0 30px 80px -20px rgba(17,19,24,0.5)",
-        card: "0 8px 30px -8px rgba(17,19,24,0.12)",
-        gold: "0 18px 50px -12px rgba(196,151,74,0.4)",
-        soft: "0 2px 16px -4px rgba(17,19,24,0.07)",
+        luxe: "0 30px 80px -20px rgba(15,14,12,0.45)",
+        card: "0 18px 50px -18px rgba(15,14,12,0.28)",
+        gold: "0 18px 50px -12px rgba(201,162,75,0.45)",
       },
       backgroundImage: {
-        "gold-grad": "linear-gradient(135deg,#DDB870 0%,#C4974A 45%,#9B7428 100%)",
-        "ink-grad": "linear-gradient(180deg,rgba(17,19,24,0) 0%,rgba(17,19,24,0.9) 100%)",
+        "gold-grad": "linear-gradient(135deg,#e6c878 0%,#c9a24b 45%,#a07e2e 100%)",
+        "ink-grad": "linear-gradient(180deg,rgba(15,14,12,0) 0%,rgba(15,14,12,0.85) 100%)",
       },
       keyframes: {
         shimmer: {

@@ -4,12 +4,11 @@ import { HIGHLIGHTS, PROJECT } from "@/lib/data";
 
 export default function Highlights() {
   return (
-    <section id="highlights" className="bg-chalk">
-      {/* Hairline-separated stat grid — 1px gap creates dividers via bg color bleed */}
-      <div className="grid grid-cols-2 gap-px bg-[#DDD9D2] lg:grid-cols-4">
+    <section id="highlights" className="relative border-y border-white/10 bg-ink-soft py-16">
+      <div className="container-luxe grid grid-cols-2 gap-x-6 gap-y-10 lg:grid-cols-4">
         {HIGHLIGHTS.map((h, i) => (
-          <Reveal key={h.label} delay={i * 0.07} className="bg-chalk px-8 py-12 text-center sm:px-12">
-            <div className="font-serif text-5xl font-semibold text-[#1C1A18] sm:text-6xl">
+          <Reveal key={h.label} delay={i * 0.1} className="text-center">
+            <div className="font-serif text-4xl font-medium text-white sm:text-5xl">
               <Counter
                 to={h.value}
                 prefix={"prefix" in h ? h.prefix : ""}
@@ -17,16 +16,14 @@ export default function Highlights() {
                 display={"display" in h ? h.display : undefined}
               />
             </div>
-            <div className="mt-2 text-[10px] uppercase tracking-[0.2em] text-stone">{h.label}</div>
+            <div className="mt-2 text-xs uppercase tracking-[0.18em] text-sand/60">{h.label}</div>
           </Reveal>
         ))}
       </div>
-
-      {/* Tagline strip */}
-      <Reveal className="border-t border-[#DDD9D2] px-5 py-5 text-center sm:px-8">
-        <p className="mx-auto max-w-2xl text-[13px] text-stone">
-          A landmark address opposite Xperia Mall, {PROJECT.city} — RERA-approved by{" "}
-          <span className="font-medium text-[#2C2825]">{PROJECT.developer}</span>
+      <Reveal delay={0.2} className="container-luxe mt-12 text-center">
+        <p className="mx-auto max-w-2xl text-sm text-sand/55">
+          A landmark address opposite Xperia Mall, {PROJECT.city} — RERA-approved and built on the
+          promise of {PROJECT.developer}: {PROJECT.tagline}
         </p>
       </Reveal>
     </section>

@@ -1,22 +1,21 @@
 import type { Metadata, Viewport } from "next";
-import { Cormorant_Garamond, Outfit } from "next/font/google";
+import { Fraunces, Plus_Jakarta_Sans } from "next/font/google";
 import "./globals.css";
 import SmoothScroll from "@/components/SmoothScroll";
 import { PROJECT, SITE_URL } from "@/lib/data";
 import { buildJsonLd } from "@/lib/seo";
 
-const cormorant = Cormorant_Garamond({
+const fraunces = Fraunces({
   subsets: ["latin"],
-  variable: "--font-cormorant",
-  display: "swap",
-  weight: ["400", "500", "600", "700"],
-});
-
-const outfit = Outfit({
-  subsets: ["latin"],
-  variable: "--font-outfit",
+  variable: "--font-fraunces",
   display: "swap",
   weight: ["300", "400", "500", "600", "700"],
+});
+
+const jakarta = Plus_Jakarta_Sans({
+  subsets: ["latin"],
+  variable: "--font-jakarta",
+  display: "swap",
 });
 
 const title = `${PROJECT.name} by ${PROJECT.developer} | 1 & 2 BHK Flats in Dombivli East`;
@@ -71,12 +70,13 @@ export const metadata: Metadata = {
     follow: true,
     googleBot: { index: true, follow: true, "max-image-preview": "large", "max-snippet": -1 },
   },
+  // Paste the token from Google Search Console > Settings > Ownership verification.
   verification: { google: process.env.NEXT_PUBLIC_GSC_TOKEN || undefined },
   formatDetection: { telephone: true },
 };
 
 export const viewport: Viewport = {
-  themeColor: "#111318",
+  themeColor: "#0f0e0c",
   width: "device-width",
   initialScale: 1,
 };
@@ -85,7 +85,7 @@ const jsonLd = buildJsonLd();
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en" className={`${cormorant.variable} ${outfit.variable}`}>
+    <html lang="en" className={`${fraunces.variable} ${jakarta.variable}`}>
       <body className="font-sans" suppressHydrationWarning>
         <script
           type="application/ld+json"
