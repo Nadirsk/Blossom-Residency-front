@@ -3,41 +3,56 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Plus } from "lucide-react";
-import { FAQS } from "@/lib/data";
+import { FAQS, PROJECT, waLink } from "@/lib/data";
 import Reveal from "./Reveal";
 
 export default function Faq() {
   const [open, setOpen] = useState<number | null>(0);
 
   return (
-    <section id="faq" className="relative bg-ink-soft py-24 sm:py-32">
-      <div className="container-luxe grid gap-12 lg:grid-cols-[0.8fr_1.2fr]">
+    <section id="faq" className="relative bg-chalk py-24 sm:py-32">
+      <div className="container-luxe grid gap-12 lg:grid-cols-[0.85fr_1.15fr]">
         <Reveal>
-          <span className="eyebrow mb-4">
-            <span className="h-px w-8 bg-gold" /> FAQ
-          </span>
-          <h2 className="font-serif text-4xl font-light text-white sm:text-5xl">
-            Questions, <span className="gold-text">answered</span>
+          <p className="eyebrow-muted mb-4">FAQ</p>
+          <h2 className="font-serif text-4xl font-medium text-[#1C1A18] sm:text-5xl">
+            Questions,{" "}
+            <span className="gold-text italic">answered</span>
           </h2>
-          <p className="mt-4 text-sm text-sand/60">
-            Still curious? Message us on WhatsApp and our team will respond personally.
+          <p className="mt-4 text-[13px] leading-relaxed text-stone">
+            Still curious? Our team will respond personally.
           </p>
+          <a
+            href={waLink("Hi, I have a question about Blossom Residency.")}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="btn-outline mt-6 inline-flex"
+          >
+            Ask on WhatsApp
+          </a>
         </Reveal>
 
-        <div className="divide-y divide-white/10 border-y border-white/10">
+        <div className="divide-y divide-[#DDD9D2] border-y border-[#DDD9D2]">
           {FAQS.map((f, i) => {
             const isOpen = open === i;
             return (
               <div key={f.q}>
                 <button
                   onClick={() => setOpen(isOpen ? null : i)}
-                  className="flex w-full items-center justify-between gap-4 py-5 text-left"
+                  className="flex w-full items-start justify-between gap-4 py-5 text-left"
                 >
-                  <span className={`font-serif text-lg transition-colors ${isOpen ? "text-gold" : "text-white"}`}>
+                  <span
+                    className={`font-serif text-[17px] font-medium leading-snug transition-colors ${
+                      isOpen ? "text-gold" : "text-[#1C1A18]"
+                    }`}
+                  >
                     {f.q}
                   </span>
-                  <span className={`shrink-0 text-gold transition-transform duration-300 ${isOpen ? "rotate-45" : ""}`}>
-                    <Plus />
+                  <span
+                    className={`mt-0.5 shrink-0 text-gold transition-transform duration-300 ${
+                      isOpen ? "rotate-45" : ""
+                    }`}
+                  >
+                    <Plus size={20} />
                   </span>
                 </button>
                 <AnimatePresence initial={false}>
@@ -46,10 +61,10 @@ export default function Faq() {
                       initial={{ height: 0, opacity: 0 }}
                       animate={{ height: "auto", opacity: 1 }}
                       exit={{ height: 0, opacity: 0 }}
-                      transition={{ duration: 0.35, ease: [0.22, 1, 0.36, 1] }}
+                      transition={{ duration: 0.32, ease: [0.22, 1, 0.36, 1] }}
                       className="overflow-hidden"
                     >
-                      <p className="pb-6 pr-8 text-sm leading-relaxed text-sand/65">{f.a}</p>
+                      <p className="pb-6 pr-8 text-[13px] leading-relaxed text-stone">{f.a}</p>
                     </motion.div>
                   )}
                 </AnimatePresence>

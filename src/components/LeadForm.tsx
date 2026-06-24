@@ -24,41 +24,41 @@ export default function LeadForm() {
   };
 
   const field =
-    "w-full rounded-xl border border-white/15 bg-white/5 px-4 py-3 text-sm text-white placeholder:text-sand/40 outline-none transition-colors focus:border-gold focus:bg-white/[0.07]";
+    "w-full rounded-xl border border-white/[0.12] bg-white/[0.06] px-4 py-3 text-sm text-white placeholder:text-sand/35 outline-none transition-colors focus:border-gold/60 focus:bg-white/[0.08]";
 
   return (
-    <section id="enquire" className="relative overflow-hidden py-24 sm:py-32">
-      <div className="absolute inset-0 bg-[radial-gradient(70%_70%_at_80%_20%,rgba(201,162,75,0.12),transparent)]" />
-      <div className="container-luxe relative grid items-center gap-12 lg:grid-cols-2">
+    <section id="enquire" className="relative bg-ink py-24 sm:py-32">
+      <div className="container-luxe grid items-center gap-12 lg:grid-cols-2">
         <Reveal>
-          <span className="eyebrow mb-4">
-            <span className="h-px w-8 bg-gold" /> Book Your Dream Home
-          </span>
-          <h2 className="font-serif text-4xl font-light leading-tight text-white sm:text-5xl">
-            Get the <span className="gold-text">best offer</span> on Blossom{" "}
-            <span className="gold-text">Residency</span>
+          <p className="eyebrow mb-4">Book Your Dream Home</p>
+          <h2 className="font-serif text-4xl font-medium leading-tight text-white sm:text-5xl">
+            Get the <span className="gold-text italic">best offer</span> on{" "}
+            Blossom Residency
           </h2>
-          <p className="mt-5 max-w-md text-sand/65">
-            Share a few details and our team will instantly connect with you on WhatsApp with the
-            latest price sheet, floor plans and site-visit slots.
+          <p className="mt-5 max-w-md text-[14px] leading-relaxed text-sand/60">
+            Share a few details and our team will connect with you on WhatsApp with the latest price
+            sheet, floor plans and site-visit slots.
           </p>
 
           <div className="mt-8 flex flex-wrap gap-3">
             <a href={`tel:${PROJECT.phoneRaw}`} className="btn-gold">
-              <Phone size={16} /> {PROJECT.phone}
+              <Phone size={15} /> {PROJECT.phone}
             </a>
             <a href={PROJECT.brochure} download className="btn-ghost">
-              <Download size={16} /> Brochure
+              <Download size={15} /> Brochure
             </a>
           </div>
 
-          <p className="mt-6 text-xs text-sand/45">
+          <p className="mt-6 text-[11px] text-stone">
             {PROJECT.location} · MahaRERA {PROJECT.rera}
           </p>
         </Reveal>
 
         <Reveal delay={0.1}>
-          <form onSubmit={submit} className="glass rounded-3xl p-6 shadow-luxe sm:p-8">
+          <form
+            onSubmit={submit}
+            className="rounded-2xl border border-white/[0.09] bg-ink-soft p-6 sm:p-8"
+          >
             <div className="grid gap-4">
               <input
                 required
@@ -85,7 +85,7 @@ export default function LeadForm() {
                 className={field}
               />
               <div>
-                <label className="mb-2 block text-xs uppercase tracking-widest text-sand/50">
+                <label className="mb-2 block text-[10px] font-medium uppercase tracking-widest text-stone">
                   I&apos;m looking for
                 </label>
                 <div className="flex flex-wrap gap-2">
@@ -96,8 +96,8 @@ export default function LeadForm() {
                       onClick={() => setForm({ ...form, requirement: r })}
                       className={`rounded-full border px-4 py-2 text-xs font-medium transition-all ${
                         form.requirement === r
-                          ? "border-gold bg-gold/15 text-gold"
-                          : "border-white/15 text-sand/70 hover:border-white/30"
+                          ? "border-gold bg-gold/12 text-gold"
+                          : "border-white/12 text-sand/60 hover:border-white/25 hover:text-sand/80"
                       }`}
                     >
                       {r}
@@ -109,15 +109,15 @@ export default function LeadForm() {
               <button type="submit" className="btn-gold mt-2 w-full">
                 {sent ? (
                   <>
-                    <Check size={16} /> Opening WhatsApp…
+                    <Check size={15} /> Opening WhatsApp…
                   </>
                 ) : (
                   <>
-                    Get Best Offer <ArrowRight size={16} />
+                    Get Best Offer <ArrowRight size={15} />
                   </>
                 )}
               </button>
-              <p className="text-center text-[11px] text-sand/40">
+              <p className="text-center text-[11px] text-stone/50">
                 By submitting you agree to be contacted about this project.
               </p>
             </div>

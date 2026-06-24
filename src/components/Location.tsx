@@ -4,31 +4,32 @@ import Reveal from "./Reveal";
 
 export default function Location() {
   return (
-    <section id="location" className="relative bg-ink-soft py-24 sm:py-32">
+    <section id="location" className="relative bg-ink py-24 sm:py-32">
       <div className="container-luxe">
-        <Reveal className="max-w-2xl">
-          <span className="eyebrow mb-4">
-            <span className="h-px w-8 bg-gold" /> Location Advantages
-          </span>
-          <h2 className="font-serif text-4xl font-light text-white sm:text-5xl">
-            Prime connectivity, <span className="gold-text">best investment</span>
-          </h2>
-          <p className="mt-4 text-sand/65">
-            Strategically located at Nilje, Dombivli East — seamless access to malls, metro, railway
-            and highways makes it ideal for both home-buyers and investors.
-          </p>
+        <Reveal>
+          <p className="eyebrow mb-4">Location Advantages</p>
+          <div className="flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between">
+            <h2 className="font-serif text-4xl font-medium text-white sm:text-5xl">
+              Prime connectivity,{" "}
+              <span className="gold-text italic">best investment</span>
+            </h2>
+            <p className="max-w-xs text-[13px] text-sand/55 sm:text-right">
+              Nilje, Dombivli East — one of the fastest-appreciating corridors in the MMR.
+            </p>
+          </div>
         </Reveal>
 
         <div className="mt-14 grid items-start gap-10 lg:grid-cols-2">
+          {/* Map */}
           <Reveal>
-            <div className="overflow-hidden rounded-3xl border border-white/10 shadow-luxe">
+            <div className="overflow-hidden rounded-2xl border border-white/[0.09] shadow-luxe">
               <div className="group relative h-[360px] w-full sm:h-[460px] lg:h-[520px]">
                 <iframe
                   title="Blossom Residency location on Google Maps"
                   src={MAP_EMBED}
                   loading="lazy"
                   referrerPolicy="no-referrer-when-downgrade"
-                  className="absolute inset-0 h-full w-full grayscale-[0.25] contrast-[1.05]"
+                  className="absolute inset-0 h-full w-full grayscale-[0.2] contrast-[1.04]"
                 />
                 <a
                   href={MAP_LINK}
@@ -41,61 +42,62 @@ export default function Location() {
                     Open in Google Maps
                   </span>
                 </a>
-                <span className="pointer-events-none absolute left-4 top-4 z-20 inline-flex items-center gap-1.5 rounded-full bg-ink/80 px-3 py-1.5 text-xs font-medium text-sand backdrop-blur">
-                  <MapPin size={13} className="text-gold" /> Opp. Xperia Mall, Nilje
+                <span className="pointer-events-none absolute left-4 top-4 z-20 inline-flex items-center gap-1.5 rounded-full bg-ink/80 px-3 py-1.5 text-[11px] font-medium text-sand backdrop-blur-sm">
+                  <MapPin size={12} className="text-gold" /> Opp. Xperia Mall, Nilje
                 </span>
               </div>
               <a
                 href={MAP_DIRECTIONS}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center justify-between gap-3 border-t border-white/10 bg-ink px-5 py-4 text-sm font-medium text-gold transition-colors hover:bg-white/5"
+                className="flex items-center justify-between gap-3 border-t border-white/[0.08] bg-ink-soft px-5 py-4 text-[13px] font-medium text-gold transition-colors hover:bg-white/5"
               >
                 <span className="inline-flex items-center gap-2">
-                  <Navigation size={16} /> Get Directions to {PROJECT.name}
+                  <Navigation size={15} /> Get Directions to {PROJECT.name}
                 </span>
-                <ExternalLink size={15} />
+                <ExternalLink size={14} />
               </a>
             </div>
           </Reveal>
 
+          {/* Location cards + investment */}
           <div>
             <div className="grid gap-3 sm:grid-cols-2">
               {LOCATION.map((l, i) => (
-                <Reveal key={l.place} delay={(i % 2) * 0.08}>
-                  <div className="glass h-full rounded-2xl p-4">
+                <Reveal key={l.place} delay={(i % 2) * 0.07}>
+                  <div className="card-dark h-full rounded-xl p-4">
                     <div className="flex items-start justify-between gap-2">
-                      <MapPin size={16} className="mt-0.5 shrink-0 text-gold" />
-                      <span className="rounded-full bg-gold/12 px-2 py-0.5 text-[10px] font-semibold uppercase tracking-wide text-gold">
+                      <MapPin size={14} className="mt-0.5 shrink-0 text-gold" />
+                      <span className="rounded-full bg-gold/10 px-2 py-0.5 text-[9px] font-semibold uppercase tracking-wide text-gold">
                         {l.time}
                       </span>
                     </div>
-                    <h3 className="mt-2 text-sm font-semibold text-white">{l.place}</h3>
-                    <p className="mt-1 text-xs leading-relaxed text-sand/60">{l.detail}</p>
+                    <h3 className="mt-2 text-[13px] font-semibold text-white">{l.place}</h3>
+                    <p className="mt-1 text-[11px] leading-relaxed text-sand/50">{l.detail}</p>
                   </div>
                 </Reveal>
               ))}
             </div>
 
             <Reveal delay={0.1}>
-              <div className="mt-6 rounded-2xl border border-gold/25 bg-gold/[0.06] p-6">
+              <div className="mt-5 rounded-xl border border-gold/20 bg-gold/[0.05] p-5">
                 <div className="flex items-center gap-2 text-gold">
-                  <TrendingUp size={18} />
-                  <span className="text-sm font-semibold uppercase tracking-wide">
+                  <TrendingUp size={16} />
+                  <span className="text-[11px] font-semibold uppercase tracking-[0.18em]">
                     High Growth Investment
                   </span>
                 </div>
-                <ul className="mt-4 grid gap-2.5">
+                <ul className="mt-4 grid gap-2">
                   {INVESTMENT.map((inv) => (
-                    <li key={inv} className="flex items-start gap-2.5 text-sm text-sand/80">
-                      <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-gold" />
+                    <li key={inv} className="flex items-start gap-2.5 text-[13px] text-sand/70">
+                      <span className="mt-1.5 h-1 w-1 shrink-0 rounded-full bg-gold" />
                       {inv}
                     </li>
                   ))}
                 </ul>
-                <p className="mt-4 text-xs text-sand/50">
-                  Homes at {PROJECT.name} start from {PROJECT.startingPrice} — a smart entry into one
-                  of Dombivli&apos;s fastest-appreciating corridors.
+                <p className="mt-4 text-[11px] text-sand/40">
+                  Homes at {PROJECT.name} start from {PROJECT.startingPrice} — smart entry into a
+                  fast-appreciating corridor.
                 </p>
               </div>
             </Reveal>
