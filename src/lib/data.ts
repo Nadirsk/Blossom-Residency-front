@@ -1,8 +1,10 @@
 // Central source of truth — real Blossom Residency project data.
 
-// IMPORTANT: set this to your REAL live domain (or NEXT_PUBLIC_SITE_URL env var).
-// Google ranking requires the canonical URL/sitemap to match the domain you deploy to.
-export const SITE_URL = (process.env.NEXT_PUBLIC_SITE_URL || "https://www.blossomresidency.in").replace(/\/$/, "");
+// Canonical live domain. Everything else (canonical tag, sitemap, robots, OG image,
+// JSON-LD) derives from this — so it MUST match the exact domain Google sees.
+// Currently the live Vercel domain. When the custom domain (blossomresidency.in) is
+// connected, just change this one value (or set the NEXT_PUBLIC_SITE_URL env var).
+export const SITE_URL = (process.env.NEXT_PUBLIC_SITE_URL || "https://blossom-residency.vercel.app").replace(/\/$/, "");
 
 // Exact project location (pin from Google Maps). 19°09'23.4"N 73°04'28.5"E
 export const GEO = { lat: 19.1565113, lng: 73.0745773 } as const;
