@@ -20,8 +20,8 @@ export const PROJECT = {
   startingPriceRaw: "29,99,999",
   location: "Opp. Xperia Mall, Nilje, Dombivli East",
   city: "Dombivli East, Maharashtra",
-  phone: "+91 98679 89323",
-  phoneRaw: "919867989323",
+  phone: "+91 93244 66477",
+  phoneRaw: "919324466477",
   brochure: "/brochure.pdf",
 } as const;
 
@@ -50,6 +50,8 @@ export const CONFIGURATIONS = [
     price: "₹29.99 L*",
     note: "Vastu-compliant · Sun-lit living",
     plan: "/images/plan-1bhk.jpg",
+    planW: 1149,
+    planH: 930,
   },
   {
     type: "2 BHK",
@@ -58,6 +60,8 @@ export const CONFIGURATIONS = [
     price: "On Request",
     note: "Twin bedrooms · Wide balcony",
     plan: "/images/plan-2bhk.jpg",
+    planW: 1146,
+    planH: 1213,
   },
 ] as const;
 
