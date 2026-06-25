@@ -4,13 +4,13 @@
 // Google ranking requires the canonical URL/sitemap to match the domain you deploy to.
 export const SITE_URL = (process.env.NEXT_PUBLIC_SITE_URL || "https://www.blossomresidency.in").replace(/\/$/, "");
 
-// Approximate coordinates for Xperia Mall, Nilje (project is opposite). Refine if you have exact lat/long.
-export const GEO = { lat: 19.1652, lng: 73.0858 } as const;
+// Exact project location (pin from Google Maps). 19°09'23.4"N 73°04'28.5"E
+export const GEO = { lat: 19.1565113, lng: 73.0745773 } as const;
 
 export const PROJECT = {
   name: "Blossom Residency",
   developer: "Shree Construction",
-  tagline: "Building Trust. Creating Homes.",
+  tagline: "Devoted To Building Dream Home.",
   hook: "Your Dream Home Awaits in Dombivli",
   config: "Premium 1 & 2 BHK Homes",
   tower: "G + 7 Premium Residential Tower",
@@ -28,11 +28,12 @@ export const PROJECT = {
 export const waLink = (msg: string) =>
   `https://wa.me/${PROJECT.phoneRaw}?text=${encodeURIComponent(msg)}`;
 
-// Google Maps — pinned to the Xperia Mall landmark (project is directly opposite).
-export const MAP_QUERY = "Xperia Mall, Nilje, Dombivli East, Maharashtra 421204";
-export const MAP_EMBED = `https://www.google.com/maps?q=${encodeURIComponent(MAP_QUERY)}&z=15&output=embed`;
-export const MAP_LINK = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(MAP_QUERY)}`;
-export const MAP_DIRECTIONS = `https://www.google.com/maps/dir/?api=1&destination=${encodeURIComponent(MAP_QUERY)}`;
+// Google Maps — pinned to the exact project coordinates (GEO above).
+export const MAP_QUERY = "Blossom Residency, Opp. Xperia Mall, Nilje, Dombivli East, Maharashtra 421204";
+export const MAP_POINT = `${GEO.lat},${GEO.lng}`;
+export const MAP_EMBED = `https://www.google.com/maps?q=${MAP_POINT}&z=17&output=embed`;
+export const MAP_LINK = `https://www.google.com/maps/search/?api=1&query=${MAP_POINT}`;
+export const MAP_DIRECTIONS = `https://www.google.com/maps/dir/?api=1&destination=${MAP_POINT}`;
 
 export const HIGHLIGHTS = [
   { value: 3, suffix: "", label: "Residential Buildings" },
@@ -52,8 +53,8 @@ export const CONFIGURATIONS = [
   },
   {
     type: "2 BHK",
-    carpet: "~650 sq ft carpet",
-    sqft: "650",
+    carpet: "588 sq ft carpet",
+    sqft: "588",
     price: "On Request",
     note: "Twin bedrooms · Wide balcony",
     plan: "/images/plan-2bhk.jpg",
