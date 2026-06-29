@@ -1,7 +1,19 @@
 import Image from "next/image";
+import Link from "next/link";
 import { MapPin, Phone } from "lucide-react";
 import { PROJECT, waLink, MAP_LINK } from "@/lib/data";
 import WhatsAppIcon from "./WhatsAppIcon";
+
+const EXPLORE: [string, string][] = [
+  ["1 BHK Flats", "/1-bhk-flats-in-dombivli-east"],
+  ["2 BHK Flats", "/2-bhk-flats-in-dombivli-east"],
+  ["New Projects", "/new-projects-in-dombivli-east"],
+  ["Price & Plans", "/price"],
+  ["Location", "/location"],
+  ["Amenities", "/amenities"],
+  ["Blog", "/blog"],
+  ["Enquire", "/#enquire"],
+];
 
 export default function Footer() {
   return (
@@ -34,12 +46,9 @@ export default function Footer() {
         <div className="text-sm">
           <h3 className="mb-4 text-xs uppercase tracking-widest text-sand/45">Explore</h3>
           <ul className="grid grid-cols-2 gap-2 text-sand/70">
-            {[
-              ["About", "#about"], ["Residences", "#residences"], ["Amenities", "#amenities"],
-              ["Location", "#location"], ["Gallery", "#gallery"], ["Enquire", "#enquire"],
-            ].map(([l, h]) => (
+            {EXPLORE.map(([l, h]) => (
               <li key={h}>
-                <a href={h} className="transition-colors hover:text-gold">{l}</a>
+                <Link href={h} className="transition-colors hover:text-gold">{l}</Link>
               </li>
             ))}
           </ul>

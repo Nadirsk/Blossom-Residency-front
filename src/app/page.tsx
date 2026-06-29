@@ -11,12 +11,15 @@ import Developer from "@/components/Developer";
 import Testimonials from "@/components/Testimonials";
 import Faq from "@/components/Faq";
 import LeadForm from "@/components/LeadForm";
+import PopularSearches from "@/components/PopularSearches";
 import Footer from "@/components/Footer";
 import StickyActions from "@/components/StickyActions";
+import { buildJsonLd, jsonLdScript } from "@/lib/seo";
 
 export default function Home() {
   return (
     <main className="relative">
+      <script type="application/ld+json" dangerouslySetInnerHTML={jsonLdScript(buildJsonLd())} />
       <ScrollProgress />
       <Navbar />
       <Hero />
@@ -30,6 +33,7 @@ export default function Home() {
       <Testimonials />
       <Faq />
       <LeadForm />
+      <PopularSearches />
       <Footer />
       <StickyActions />
     </main>

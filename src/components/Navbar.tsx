@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react";
 import Image from "next/image";
+import { usePathname } from "next/navigation";
 import { Menu, X, Phone } from "lucide-react";
 import { PROJECT } from "@/lib/data";
 
@@ -17,6 +18,9 @@ const LINKS = [
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
+  const pathname = usePathname();
+  // On the homepage these are in-page anchors; on sub-pages they must jump back home.
+  const to = (hash: string) => (pathname === "/" ? hash : `/${hash}`);
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 40);
@@ -32,7 +36,7 @@ export default function Navbar() {
       }`}
     >
       <nav className="container-luxe flex items-center justify-between">
-        <a href="#top" className="flex items-center gap-3">
+        <a href={to("#top")} className="flex items-center gap-3">
           <Image
             src="/images/logo.png"
             alt={`${PROJECT.name} logo`}
@@ -55,7 +59,7 @@ export default function Navbar() {
           {LINKS.map(([label, href]) => (
             <a
               key={href}
-              href={href}
+              href={to(href)}
               className="relative text-sm font-medium text-sand/80 transition-colors hover:text-white after:absolute after:-bottom-1.5 after:left-0 after:h-px after:w-0 after:bg-gold after:transition-all hover:after:w-full"
             >
               {label}
@@ -67,7 +71,7 @@ export default function Navbar() {
           <a href={`tel:${PROJECT.phoneRaw}`} className="btn-ghost !px-5 !py-2.5">
             <Phone size={15} /> {PROJECT.phone}
           </a>
-          <a href="#enquire" className="btn-gold !px-5 !py-2.5">
+          <a href={to("#enquire")} className="btn-gold !px-5 !py-2.5">
             Book Site Visit
           </a>
         </div>
@@ -87,14 +91,14 @@ export default function Navbar() {
             {LINKS.map(([label, href]) => (
               <a
                 key={href}
-                href={href}
+                href={to(href)}
                 onClick={() => setOpen(false)}
                 className="rounded-xl px-4 py-3 text-sm text-sand/90 hover:bg-white/5"
               >
                 {label}
               </a>
             ))}
-            <a href="#enquire" onClick={() => setOpen(false)} className="btn-gold mt-2">
+            <a href={to("#enquire")} onClick={() => setOpen(false)} className="btn-gold mt-2">
               Book Site Visit
             </a>
           </div>

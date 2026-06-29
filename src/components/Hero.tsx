@@ -69,6 +69,9 @@ export default function Hero() {
           className="max-w-3xl font-serif text-5xl font-light leading-[1.05] text-white sm:text-6xl lg:text-7xl"
         >
           Blossom <span className="gold-text font-medium">Residency</span>
+          <span className="mt-4 block font-sans text-base font-normal leading-snug tracking-wide text-sand/75 sm:text-lg">
+            1 &amp; 2 BHK Flats in Dombivli East — Opp. Xperia Mall, Nilje
+          </span>
         </motion.h1>
 
         <motion.p
