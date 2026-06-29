@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import Image from "next/image";
 import { Menu, X, Phone } from "lucide-react";
 import { PROJECT } from "@/lib/data";
 
@@ -31,12 +32,22 @@ export default function Navbar() {
       }`}
     >
       <nav className="container-luxe flex items-center justify-between">
-        <a href="#top" className="flex flex-col leading-none">
-          <span className="font-serif text-xl font-semibold tracking-wide text-white">
-            Blossom <span className="gold-text">Residency</span>
-          </span>
-          <span className="mt-0.5 text-[10px] uppercase tracking-[0.32em] text-gold/80">
-            by {PROJECT.developer}
+        <a href="#top" className="flex items-center gap-3">
+          <Image
+            src="/images/logo.png"
+            alt={`${PROJECT.name} logo`}
+            width={48}
+            height={48}
+            priority
+            className={`w-auto transition-all duration-500 ${scrolled ? "h-9" : "h-11"}`}
+          />
+          <span className="flex flex-col leading-none">
+            <span className="font-serif text-xl font-semibold tracking-wide text-white">
+              Blossom <span className="gold-text">Residency</span>
+            </span>
+            <span className="mt-0.5 text-[10px] uppercase tracking-[0.32em] text-gold/80">
+              by {PROJECT.developer}
+            </span>
           </span>
         </a>
 
