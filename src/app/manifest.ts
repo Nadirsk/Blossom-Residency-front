@@ -13,8 +13,9 @@ export default function manifest(): MetadataRoute.Manifest {
     lang: "en-IN",
     categories: ["business", "real estate"],
     icons: [
-      { src: "/images/logo.png", sizes: "192x192", type: "image/png" },
-      { src: "/images/logo.png", sizes: "512x512", type: "image/png" },
+      { src: "/icons/icon-192.png", sizes: "192x192", type: "image/png", purpose: "any" },
+      { src: "/icons/icon-512.png", sizes: "512x512", type: "image/png", purpose: "any" },
+      { src: "/icons/maskable-512.png", sizes: "512x512", type: "image/png", purpose: "maskable" },
     ],
   };
 }
