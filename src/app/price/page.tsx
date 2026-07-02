@@ -10,7 +10,7 @@ import { buildPageJsonLd, jsonLdScript } from "@/lib/seo";
 import { PROJECT, SITE_URL, CONFIGURATIONS } from "@/lib/data";
 
 const PATH = "/price";
-const DESCRIPTION = `Blossom Residency price list — 1 BHK flats from ${PROJECT.startingPrice} (~430 sq ft) and 2 BHK (588 sq ft) on request, in Dombivli East. MahaRERA ${PROJECT.rera}. Home-loan ready. Get the full cost sheet.`;
+const DESCRIPTION = `Blossom Residency price list — 1 BHK from ${PROJECT.startingPrice} (~430 sq ft), 2 BHK (588 sq ft) on request. Dombivli East. MahaRERA ${PROJECT.rera}.`;
 
 export const metadata: Metadata = {
   title: "Price & Payment Plan",

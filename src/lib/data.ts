@@ -93,11 +93,26 @@ export const MAP_EMBED = `https://www.google.com/maps?q=${MAP_POINT}&z=17&output
 export const MAP_LINK = `https://www.google.com/maps/search/?api=1&query=${MAP_POINT}`;
 export const MAP_DIRECTIONS = `https://www.google.com/maps/dir/?api=1&destination=${MAP_POINT}`;
 
+export const AMENITIES = [
+  { name: "24x7 Security Service", icon: "ShieldCheck", tint: "slate", img: "/images/amenities/security.jpg" },
+  { name: "24-Hour CCTV Surveillance", icon: "Cctv", tint: "blue", img: "/images/amenities/cctv.jpg" },
+  { name: "Landscaped Garden", icon: "Trees", tint: "green", img: "/images/amenities/garden.jpg" },
+  { name: "Kids Play Area", icon: "ToyBrick", tint: "amber", img: "/images/amenities/kids.jpg" },
+  { name: "Rooftop Amenities", icon: "Building2", tint: "indigo", img: "/images/amenities/rooftop.jpg" },
+  { name: "Yoga & Meditation Deck", icon: "Flower2", tint: "teal", img: "/images/amenities/yoga.jpg" },
+  { name: "Outdoor Gym", icon: "Dumbbell", tint: "gold", img: "/images/amenities/gym.jpg" },
+  { name: "Sun Bath Beds", icon: "Sun", tint: "orange", img: "/images/amenities/sunbath.jpg" },
+  { name: "Sand Pit for Toddlers", icon: "Baby", tint: "sand", img: "/images/amenities/sandpit.jpg" },
+  { name: "Bonfire Area", icon: "Flame", tint: "ember", img: "/images/amenities/bonfire.jpg" },
+  { name: "Indoor Games Zone", icon: "Gamepad2", tint: "violet", img: "/images/amenities/games.jpg" },
+  { name: "Ample Car Parking", icon: "Car", tint: "graphite", img: "/images/amenities/parking.jpg" },
+] as const;
+
 export const HIGHLIGHTS = [
   { value: 3, suffix: "", label: "Residential Buildings" },
   { value: 7, prefix: "G+", suffix: "", label: "Storey Tower" },
   { value: 2, suffix: " BHK", label: "1 & 2 BHK Homes", display: "1–2" },
-  { value: 11, suffix: "+", label: "Premium Amenities" },
+  { value: AMENITIES.length, suffix: "+", label: "Premium Amenities" },
 ] as const;
 
 export const CONFIGURATIONS = [
@@ -123,25 +138,10 @@ export const CONFIGURATIONS = [
   },
 ] as const;
 
-export const AMENITIES = [
-  { name: "24x7 Security Service", icon: "ShieldCheck", tint: "slate", img: "/images/amenities/security.jpg" },
-  { name: "24-Hour CCTV Surveillance", icon: "Cctv", tint: "blue", img: "/images/amenities/cctv.jpg" },
-  { name: "Landscaped Garden", icon: "Trees", tint: "green", img: "/images/amenities/garden.jpg" },
-  { name: "Kids Play Area", icon: "ToyBrick", tint: "amber", img: "/images/amenities/kids.jpg" },
-  { name: "Rooftop Amenities", icon: "Building2", tint: "indigo", img: "/images/amenities/rooftop.jpg" },
-  { name: "Yoga & Meditation Deck", icon: "Flower2", tint: "teal", img: "/images/amenities/yoga.jpg" },
-  { name: "Outdoor Gym", icon: "Dumbbell", tint: "gold", img: "/images/amenities/gym.jpg" },
-  { name: "Sun Bath Beds", icon: "Sun", tint: "orange", img: "/images/amenities/sunbath.jpg" },
-  { name: "Sand Pit for Toddlers", icon: "Baby", tint: "sand", img: "/images/amenities/sandpit.jpg" },
-  { name: "Bonfire Area", icon: "Flame", tint: "ember", img: "/images/amenities/bonfire.jpg" },
-  { name: "Indoor Games Zone", icon: "Gamepad2", tint: "violet", img: "/images/amenities/games.jpg" },
-  { name: "Ample Car Parking", icon: "Car", tint: "graphite", img: "/images/amenities/parking.jpg" },
-] as const;
-
 export const WHY_US = [
   "10+ Years in Dombivli",
   "Opposite Xperia Mall",
-  "11+ Premium Amenities",
+  `${AMENITIES.length}+ Premium Amenities`,
   "Zero Hidden Charges",
   "500+ Happy Families",
   "On-Time Possession",

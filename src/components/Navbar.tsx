@@ -7,12 +7,12 @@ import { Menu, X, Phone } from "lucide-react";
 import { PROJECT } from "@/lib/data";
 
 const LINKS = [
-  ["About", "#about"],
-  ["Residences", "#residences"],
-  ["Amenities", "#amenities"],
-  ["Location", "#location"],
-  ["Gallery", "#gallery"],
-  ["FAQ", "#faq"],
+  ["About", "/about"],
+  ["Residences", "/residences"],
+  ["Amenities", "/amenities"],
+  ["Location", "/location"],
+  ["Gallery", "/gallery"],
+  ["FAQ", "/faq"],
 ];
 
 export default function Navbar() {
@@ -59,7 +59,7 @@ export default function Navbar() {
           {LINKS.map(([label, href]) => (
             <a
               key={href}
-              href={to(href)}
+              href={href}
               className="relative text-sm font-medium text-sand/80 transition-colors hover:text-white after:absolute after:-bottom-1.5 after:left-0 after:h-px after:w-0 after:bg-gold after:transition-all hover:after:w-full"
             >
               {label}
@@ -91,7 +91,7 @@ export default function Navbar() {
             {LINKS.map(([label, href]) => (
               <a
                 key={href}
-                href={to(href)}
+                href={href}
                 onClick={() => setOpen(false)}
                 className="rounded-xl px-4 py-3 text-sm text-sand/90 hover:bg-white/5"
               >

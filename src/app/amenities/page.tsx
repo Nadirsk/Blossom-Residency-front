@@ -9,7 +9,7 @@ import { buildPageJsonLd, jsonLdScript } from "@/lib/seo";
 import { PROJECT, SITE_URL, AMENITIES } from "@/lib/data";
 
 const PATH = "/amenities";
-const DESCRIPTION = `${AMENITIES.length} premium amenities at Blossom Residency, Dombivli East — 24x7 security & CCTV, landscaped garden, kids play area, rooftop deck, yoga zone, outdoor gym, indoor games and ample parking.`;
+const DESCRIPTION = `${AMENITIES.length} premium amenities at Blossom Residency, Dombivli East — 24x7 security, landscaped garden, kids play area, rooftop deck, yoga zone & outdoor gym.`;
 
 export const metadata: Metadata = {
   title: "Amenities",
@@ -30,7 +30,7 @@ const FAQS = [
   },
   {
     q: "Are the amenities included for both 1 BHK and 2 BHK residents?",
-    a: "Yes. All 11+ amenities are shared community features available to every resident, whether you buy a 1 BHK or a 2 BHK.",
+    a: `Yes. All ${AMENITIES.length}+ amenities are shared community features available to every resident, whether you buy a 1 BHK or a 2 BHK.`,
   },
   {
     q: "Is there parking and security?",

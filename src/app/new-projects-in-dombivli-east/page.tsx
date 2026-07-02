@@ -7,7 +7,7 @@ import FaqBlock from "@/components/FaqBlock";
 import RelatedPages from "@/components/RelatedPages";
 import CtaBand from "@/components/CtaBand";
 import { buildPageJsonLd, jsonLdScript } from "@/lib/seo";
-import { PROJECT, SITE_URL, CONFIGURATIONS, DEVELOPER_STATS } from "@/lib/data";
+import { PROJECT, SITE_URL, CONFIGURATIONS, DEVELOPER_STATS, AMENITIES } from "@/lib/data";
 
 const PATH = "/new-projects-in-dombivli-east";
 const DESCRIPTION = `Looking for new projects in Dombivli East? Blossom Residency by ${PROJECT.developer} offers new 1 & 2 BHK flats opposite Xperia Mall, Nilje — a ${PROJECT.tower}, MahaRERA ${PROJECT.rera}, starting ${PROJECT.startingPrice}.`;
@@ -85,7 +85,7 @@ export default function Page() {
           <p className="mt-5 max-w-3xl text-base leading-relaxed text-sand/70">
             If you&apos;re searching for new projects in Dombivli East, Blossom Residency stands out for
             the right reasons: a premium {PROJECT.tower.toLowerCase()} positioned directly opposite
-            Xperia Mall in Nilje, with thoughtfully sized 1 & 2 BHK homes, 11+ amenities, and the
+            Xperia Mall in Nilje, with thoughtfully sized 1 & 2 BHK homes, {AMENITIES.length}+ amenities, and the
             assurance of a MahaRERA registration. It&apos;s built by {PROJECT.developer}, a local
             developer with 10+ years and 500+ families housed.
           </p>

@@ -16,11 +16,15 @@ export default function Counter({
 }) {
   const ref = useRef<HTMLSpanElement>(null);
   const inView = useInView(ref, { once: true, margin: "-60px" });
-  const [n, setN] = useState(0);
+  // Start at the final value so the server-rendered DOM (crawlers, no-JS) always
+  // shows the real number; the count-up-from-zero effect only kicks in once the
+  // counter scrolls into view for a visiting browser.
+  const [n, setN] = useState(to);
 
   useEffect(() => {
     if (!inView) return;
     if (display) return;
+    setN(0);
     let raf = 0;
     const start = performance.now();
     const dur = 1400;

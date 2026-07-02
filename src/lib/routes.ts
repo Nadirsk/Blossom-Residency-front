@@ -7,6 +7,10 @@ export const SEO_PAGES = [
   { path: "/price", label: "Price & Payment Plan" },
   { path: "/location", label: "Location & Connectivity" },
   { path: "/amenities", label: "Amenities" },
+  { path: "/about", label: "About the Project" },
+  { path: "/residences", label: "Residences & Floor Plans" },
+  { path: "/gallery", label: "Gallery" },
+  { path: "/faq", label: "FAQ" },
   { path: "/blog", label: "Blog" },
 ] as const;
 

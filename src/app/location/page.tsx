@@ -9,7 +9,7 @@ import { buildPageJsonLd, jsonLdScript } from "@/lib/seo";
 import { PROJECT, SITE_URL, LOCATION, INVESTMENT, MAP_EMBED, MAP_LINK, MAP_DIRECTIONS } from "@/lib/data";
 
 const PATH = "/location";
-const DESCRIPTION = `Blossom Residency location — opposite Xperia Mall, Nilje, Dombivli East (421204). Near Dombivli station, upcoming Hedutane metro, Kalyan-Shil Road, Thane & Navi Mumbai. Map & directions.`;
+const DESCRIPTION = `Blossom Residency — opposite Xperia Mall, Nilje, Dombivli East. Near Dombivli station, upcoming Hedutane metro & Kalyan-Shil Road. Map & directions.`;
 
 export const metadata: Metadata = {
   title: "Location & Connectivity",

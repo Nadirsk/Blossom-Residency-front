@@ -39,7 +39,7 @@ export default function Gallery() {
               delay={(i % 4) * 0.06}
               className={`${spanClass[g.span]} group relative cursor-pointer overflow-hidden rounded-2xl`}
             >
-              <button onClick={() => setIdx(i)} className="block h-full w-full" aria-label={g.title}>
+              <button onClick={() => setIdx(i)} className="relative block h-full w-full" aria-label={g.title}>
                 <Img
                   src={g.src}
                   alt={g.title}

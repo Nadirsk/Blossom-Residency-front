@@ -21,7 +21,7 @@ const hanken = Hanken_Grotesk({
 
 const title = `${PROJECT.name} by ${PROJECT.developer} | 1 & 2 BHK Flats in Dombivli East`;
 const titleTemplate = `%s | ${PROJECT.name} Dombivli`;
-const description = `${PROJECT.config} at ${PROJECT.location}. ${PROJECT.tower}, ${PROJECT.buildings}. Starting ${PROJECT.startingPrice}. MahaRERA ${PROJECT.rera}. Book a site visit today.`;
+const description = `${PROJECT.config} at ${PROJECT.location}. ${PROJECT.tower}. Starting ${PROJECT.startingPrice}. MahaRERA ${PROJECT.rera}.`;
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
@@ -98,6 +98,9 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="en" className={`${cormorant.variable} ${hanken.variable}`}>
       <body className="font-sans" suppressHydrationWarning>
+        <link rel="preconnect" href="https://www.google.com" />
+        <link rel="preconnect" href="https://maps.google.com" />
+        <link rel="dns-prefetch" href="https://www.google.com" />
         <SmoothScroll>{children}</SmoothScroll>
       </body>
     </html>
