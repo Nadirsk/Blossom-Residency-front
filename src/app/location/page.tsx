@@ -1,22 +1,22 @@
 import type { Metadata } from "next";
-import { MapPin, Navigation, ExternalLink, TrendingUp } from "lucide-react";
+import { MapPin, Footprints, Car, Navigation, ExternalLink, TrendingUp } from "lucide-react";
 import PageShell from "@/components/PageShell";
 import PageHero from "@/components/PageHero";
 import FaqBlock from "@/components/FaqBlock";
 import RelatedPages from "@/components/RelatedPages";
 import CtaBand from "@/components/CtaBand";
 import { buildPageJsonLd, jsonLdScript } from "@/lib/seo";
-import { PROJECT, SITE_URL, LOCATION, INVESTMENT, MAP_EMBED, MAP_LINK, MAP_DIRECTIONS } from "@/lib/data";
+import { PROJECT, SITE_URL, LOCATION, INVESTMENT, NEARBY, MAP_EMBED, MAP_LINK, MAP_DIRECTIONS } from "@/lib/data";
 
 const PATH = "/location";
-const DESCRIPTION = `Blossom Residency — opposite Xperia Mall, Nilje, Dombivli East. Near Dombivli station, upcoming Hedutane metro & Kalyan-Shil Road. Map & directions.`;
+const DESCRIPTION = `Blossom Residency — Nilje, Dombivli East. A 12 min walk to Nilje Railway Station and 5 min drive to Xperia Mall, near the upcoming Hedutane metro & Kalyan-Shil Road. Map & directions.`;
 
 export const metadata: Metadata = {
   title: "Location & Connectivity",
   description: DESCRIPTION,
   alternates: { canonical: PATH },
   openGraph: {
-    title: "Blossom Residency Location | Opp. Xperia Mall, Dombivli East",
+    title: "Blossom Residency Location | Near Xperia Mall, Dombivli East",
     description: DESCRIPTION,
     url: `${SITE_URL}${PATH}`,
     images: ["/images/hero.png"],
@@ -26,15 +26,15 @@ export const metadata: Metadata = {
 const FAQS = [
   {
     q: "Where exactly is Blossom Residency located?",
-    a: `Blossom Residency is located at ${PROJECT.location}, ${PROJECT.city} (PIN 421204) — directly opposite Xperia Mall in Nilje.`,
+    a: `Blossom Residency is located at ${PROJECT.location}, Maharashtra (PIN 421204) — about a 12 minute walk from Nilje Railway Station and a 5 minute drive from Xperia Mall.`,
   },
   {
-    q: "How far is it from Dombivli railway station?",
-    a: "The project has quick access to Dombivli Railway Station on the Central Line, plus the upcoming Hedutane metro station and direct links to Kalyan-Shil Road, Thane and Navi Mumbai.",
+    q: "How far is it from the railway station?",
+    a: "Nilje Railway Station is about 1 km from the project — roughly a 12 minute walk. Dombivli Railway Station on the Central Line is about 9.5 km, or a 25 minute drive, along with the upcoming Hedutane metro station and direct links to Kalyan-Shil Road, Thane and Navi Mumbai.",
   },
   {
     q: "What landmarks and conveniences are nearby?",
-    a: "Xperia Mall and PVR Cinema are right opposite, with schools (Ryan, Euro School, IRA Global), multi-specialty hospitals, D-Mart and daily markets all close by.",
+    a: "Xperia Mall and PVR Cinema are about 2 km away — a 5 minute drive. Several hospitals and clinics, including Shree Manav Kalyan and Ratnadeep Children's Hospital, are within walking distance, with schools (Ryan, Euro School, IRA Global) and daily markets close by.",
   },
 ];
 
@@ -56,9 +56,9 @@ export default function Page() {
 
       <PageHero
         eyebrow="Location"
-        title="Opposite Xperia Mall,"
+        title="Walking Distance to Nilje Station,"
         highlight="Nilje, Dombivli East"
-        subtitle={`Blossom Residency enjoys one of Dombivli East's most connected addresses — ${PROJECT.location}, PIN 421204 — with malls, metro, railway and highways all within easy reach.`}
+        subtitle={`Blossom Residency enjoys one of Dombivli East's most connected addresses — ${PROJECT.location}, PIN 421204. Nilje Railway Station is about a 12 minute walk and Xperia Mall a 5 minute drive, with metro and highways all within easy reach.`}
         crumbs={[
           { name: "Home", href: "/" },
           { name: "Location & Connectivity" },
@@ -76,8 +76,16 @@ export default function Page() {
                 referrerPolicy="no-referrer-when-downgrade"
                 className="absolute inset-0 h-full w-full grayscale-[0.25] contrast-[1.05]"
               />
-              <span className="pointer-events-none absolute left-4 top-4 inline-flex items-center gap-1.5 rounded-full bg-ink/80 px-3 py-1.5 text-xs font-medium text-sand backdrop-blur">
-                <MapPin size={13} className="text-gold" /> Opp. Xperia Mall, Nilje
+              <span className="pointer-events-none absolute left-4 top-4 flex max-w-[calc(100%-2rem)] flex-col items-start gap-1.5">
+                <span className="inline-flex items-center gap-1.5 rounded-full bg-ink/80 px-3 py-1.5 text-xs font-medium text-sand backdrop-blur">
+                  <MapPin size={13} className="text-gold" /> {PROJECT.location}
+                </span>
+                <span className="inline-flex items-center gap-1.5 rounded-full bg-ink/80 px-3 py-1.5 text-xs font-medium text-sand backdrop-blur">
+                  <Footprints size={13} className="text-gold" /> {NEARBY.station}
+                </span>
+                <span className="inline-flex items-center gap-1.5 rounded-full bg-ink/80 px-3 py-1.5 text-xs font-medium text-sand backdrop-blur">
+                  <Car size={13} className="text-gold" /> {NEARBY.mall}
+                </span>
               </span>
             </div>
             <div className="flex flex-col gap-px sm:flex-row">

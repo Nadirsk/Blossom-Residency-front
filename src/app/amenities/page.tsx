@@ -26,7 +26,7 @@ export const metadata: Metadata = {
 const FAQS = [
   {
     q: "What amenities does Blossom Residency offer?",
-    a: "Residents enjoy 24x7 security with CCTV surveillance, a landscaped garden, kids play area, rooftop amenities, a yoga & meditation deck, outdoor gym, sun-bath beds, a sand pit for toddlers, a bonfire area, indoor games and ample car parking.",
+    a: "Residents enjoy 24x7 security with CCTV surveillance, a landscaped garden, kids play area, rooftop amenities, a yoga & meditation deck, outdoor gym, sun-bath beds, a sand pit for toddlers, a bonfire area and ample car parking.",
   },
   {
     q: "Are the amenities included for both 1 BHK and 2 BHK residents?",

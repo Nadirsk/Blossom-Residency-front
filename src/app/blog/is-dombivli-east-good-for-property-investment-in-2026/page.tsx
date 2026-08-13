@@ -35,7 +35,7 @@ const FAQS = [
   },
   {
     q: "What is the price of flats in Dombivli East?",
-    a: `Entry-level 1 BHK flats in Dombivli East can start around ${PROJECT.startingPrice} — for example, at Blossom Residency in Nilje, opposite Xperia Mall. Exact pricing varies by project, floor and configuration.`,
+    a: `Entry-level 1 BHK flats in Dombivli East can start around ${PROJECT.startingPrice} — for example, at Blossom Residency in Nilje, minutes from Xperia Mall. Exact pricing varies by project, floor and configuration.`,
   },
   {
     q: "Will the metro improve property value in Dombivli East?",
@@ -65,7 +65,7 @@ export default function Page() {
         eyebrow="Investment Guide"
         title="Is Dombivli East good for property"
         highlight="investment in 2026?"
-        subtitle="A practical, data-led look at why Dombivli East — and the Nilje corridor opposite Xperia Mall — has become one of the MMR's most-watched affordable-housing markets."
+        subtitle="A practical, data-led look at why Dombivli East — and the Nilje corridor around Xperia Mall — has become one of the MMR's most-watched affordable-housing markets."
         crumbs={[
           { name: "Home", href: "/" },
           { name: "Blog", href: "/blog" },
@@ -111,7 +111,8 @@ export default function Page() {
               middle of an upgrade cycle. The Central Line keeps the area linked to the city, the
               upcoming Hedutane metro station is set to cut travel times further, and Kalyan-Shil Road
               offers direct links to Thane and Navi Mumbai. Projects sitting on this corridor — like
-              the Nilje pocket opposite Xperia Mall — tend to benefit first. See the full{" "}
+              the Nilje pocket within walking distance of Nilje station — tend to
+              benefit first. See the full{" "}
               <Link href="/location" className="text-gold underline-offset-4 hover:underline">
                 location &amp; connectivity breakdown
               </Link>

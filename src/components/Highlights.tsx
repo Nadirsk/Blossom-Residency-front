@@ -22,7 +22,7 @@ export default function Highlights() {
       </div>
       <Reveal delay={0.2} className="container-luxe mt-12 text-center">
         <p className="mx-auto max-w-2xl text-sm text-sand/55">
-          A landmark address opposite Xperia Mall, {PROJECT.city} — RERA-approved and built on the
+          A landmark address minutes from Xperia Mall, {PROJECT.city} — RERA-approved and built on the
           promise of {PROJECT.developer}: {PROJECT.tagline}
         </p>
       </Reveal>

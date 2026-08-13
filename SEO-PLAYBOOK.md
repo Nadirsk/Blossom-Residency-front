@@ -16,7 +16,7 @@ answer engines (ChatGPT, Perplexity, Gemini, Claude).
 
 | File | Change | Why it matters |
 |------|--------|----------------|
-| `components/Hero.tsx` | H1 now includes "1 & 2 BHK Flats in Dombivli East — Opp. Xperia Mall, Nilje" | Biggest on-page miss; H1 keyword is a top ranking signal |
+| `components/Hero.tsx` | H1 now includes "1 & 2 BHK Flats in Dombivli East — Near Xperia Mall, Nilje" | Biggest on-page miss; H1 keyword is a top ranking signal |
 | `lib/data.ts` | +7 long-tail FAQs (price, carpet area, builder, loans, distance, investment, booking) | AEO — these match real "People Also Ask" queries |
 | `lib/data.ts` | `SAME_AS`, `EMAIL`, `HOURS`, `RATING` constants | Feed schema + entity trust |
 | `lib/seo.ts` | Reviews + AggregateRating, per-unit `Apartment` nodes, business hours, `sameAs`, `hasMap`, `WebPage` + `speakable`, return policy (clears the warning) | Richer rich-results + voice/AI answers |
@@ -178,7 +178,9 @@ buyer questions and feeds keywords into GBP.
 ## 6. Citations & property portals (consistent NAP everywhere)
 
 Use the **exact same** Name / Address / Phone (NAP) on all of these. Inconsistent NAP hurts local rank.
-- **NAP:** Blossom Residency, Opp. Xperia Mall, Nilje, Dombivli East, Maharashtra 421204 · +91 93244 66477
+- **NAP:** Blossom Residency, Nilje, Dombivli East, Maharashtra 421204 · +91 93244 66477
+  - Landmark line (use in descriptions, not in the address field): 12 min walk to Nilje Railway Station · 5 min drive to Xperia Mall
+  - Distances are road-routed from the GEO pin in `lib/data.ts` (OSM, Aug 2026): Nilje stn ~1.0 km, Xperia Mall ~1.95 km, Kalyan-Shil Rd ~1.7 km, Dombivli stn ~9.6 km. Do not advertise a figure that isn't measured — see the `NEARBY` constant.
 
 Real-estate portals (list the project with photos + link back to the site):
 - 99acres, MagicBricks, Housing.com, NoBroker, Square Yards, CommonFloor, QuikrHomes

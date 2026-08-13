@@ -3,8 +3,8 @@
 import { useRef } from "react";
 import Image from "next/image";
 import { motion, useScroll, useTransform } from "framer-motion";
-import { Download, CalendarCheck, MapPin, ChevronDown } from "lucide-react";
-import { PROJECT, waLink } from "@/lib/data";
+import { Download, CalendarCheck, MapPin, Footprints, ChevronDown } from "lucide-react";
+import { PROJECT, NEARBY, waLink } from "@/lib/data";
 
 const fade = {
   hidden: { opacity: 0, y: 34, filter: "blur(10px)" },
@@ -70,7 +70,7 @@ export default function Hero() {
         >
           Blossom <span className="gold-text font-medium">Residency</span>
           <span className="mt-4 block font-sans text-base font-normal leading-snug tracking-wide text-sand/75 sm:text-lg">
-            1 &amp; 2 BHK Flats in Dombivli East — Opp. Xperia Mall, Nilje
+            1 &amp; 2 BHK Flats in Dombivli East — Near Xperia Mall, Nilje
           </span>
         </motion.h1>
 
@@ -94,6 +94,10 @@ export default function Hero() {
         >
           <span className="inline-flex items-center gap-2">
             <MapPin size={16} className="text-gold" /> {PROJECT.location}
+          </span>
+          <span className="hidden h-4 w-px bg-white/20 sm:block" />
+          <span className="inline-flex items-center gap-2">
+            <Footprints size={16} className="text-gold" /> {NEARBY.station}
           </span>
           <span className="hidden h-4 w-px bg-white/20 sm:block" />
           <span>

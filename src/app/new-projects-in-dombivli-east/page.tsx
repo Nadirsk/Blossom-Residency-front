@@ -10,7 +10,7 @@ import { buildPageJsonLd, jsonLdScript } from "@/lib/seo";
 import { PROJECT, SITE_URL, CONFIGURATIONS, DEVELOPER_STATS, AMENITIES } from "@/lib/data";
 
 const PATH = "/new-projects-in-dombivli-east";
-const DESCRIPTION = `Looking for new projects in Dombivli East? Blossom Residency by ${PROJECT.developer} offers new 1 & 2 BHK flats opposite Xperia Mall, Nilje — a ${PROJECT.tower}, MahaRERA ${PROJECT.rera}, starting ${PROJECT.startingPrice}.`;
+const DESCRIPTION = `Looking for new projects in Dombivli East? Blossom Residency by ${PROJECT.developer} offers new 1 & 2 BHK flats in Nilje, a 12 min walk from Nilje station — a ${PROJECT.tower}, MahaRERA ${PROJECT.rera}, starting ${PROJECT.startingPrice}.`;
 
 export const metadata: Metadata = {
   title: "New Projects in Dombivli East",
@@ -27,7 +27,7 @@ export const metadata: Metadata = {
 const FAQS = [
   {
     q: "What new residential projects are launching in Dombivli East?",
-    a: `Blossom Residency by ${PROJECT.developer} is a new residential project in Nilje, Dombivli East — a ${PROJECT.tower} across ${PROJECT.buildings.toLowerCase()}, offering 1 & 2 BHK flats opposite Xperia Mall, registered under MahaRERA ${PROJECT.rera}.`,
+    a: `Blossom Residency by ${PROJECT.developer} is a new residential project in Nilje, Dombivli East — a ${PROJECT.tower} across ${PROJECT.buildings.toLowerCase()}, offering 1 & 2 BHK flats about a 12 minute walk from Nilje Railway Station and a 5 minute drive from Xperia Mall, registered under MahaRERA ${PROJECT.rera}.`,
   },
   {
     q: "What configurations does this new project offer?",
@@ -47,7 +47,7 @@ const PILLARS = [
   { icon: Building2, title: `${PROJECT.tower}`, body: `A landmark elevation across ${PROJECT.buildings.toLowerCase()} in the prime Nilje corridor.` },
   { icon: Sparkles, title: "11+ Premium Amenities", body: "Rooftop deck, gym, garden, kids zone, security and more — lifestyle built in." },
   { icon: ShieldCheck, title: "MahaRERA Registered", body: `${PROJECT.rera} — a transparent, compliant, home-loan-ready purchase.` },
-  { icon: TrendingUp, title: "High-Growth Location", body: "Opposite Xperia Mall, near the upcoming Hedutane metro and Kalyan-Shil Road." },
+  { icon: TrendingUp, title: "High-Growth Location", body: "A 12 min walk to Nilje station and 5 min drive to Xperia Mall, near the upcoming Hedutane metro and Kalyan-Shil Road." },
 ];
 
 export default function Page() {
@@ -70,7 +70,7 @@ export default function Page() {
         eyebrow="New Launch"
         title="New Projects in"
         highlight="Dombivli East"
-        subtitle={`Blossom Residency by ${PROJECT.developer} is a new residential project opposite Xperia Mall, Nilje — a ${PROJECT.tower.toLowerCase()} of Vastu-compliant 1 & 2 BHK homes starting ${PROJECT.startingPrice}, MahaRERA ${PROJECT.rera}.`}
+        subtitle={`Blossom Residency by ${PROJECT.developer} is a new residential project in Nilje, about a 12 minute walk from Nilje Railway Station — a ${PROJECT.tower.toLowerCase()} of Vastu-compliant 1 & 2 BHK homes starting ${PROJECT.startingPrice}, MahaRERA ${PROJECT.rera}.`}
         crumbs={[
           { name: "Home", href: "/" },
           { name: "New Projects in Dombivli East" },
@@ -84,8 +84,8 @@ export default function Page() {
           </h2>
           <p className="mt-5 max-w-3xl text-base leading-relaxed text-sand/70">
             If you&apos;re searching for new projects in Dombivli East, Blossom Residency stands out for
-            the right reasons: a premium {PROJECT.tower.toLowerCase()} positioned directly opposite
-            Xperia Mall in Nilje, with thoughtfully sized 1 & 2 BHK homes, {AMENITIES.length}+ amenities, and the
+            the right reasons: a premium {PROJECT.tower.toLowerCase()} in Nilje, a 12 minute walk
+            from Nilje station, with thoughtfully sized 1 & 2 BHK homes, {AMENITIES.length}+ amenities, and the
             assurance of a MahaRERA registration. It&apos;s built by {PROJECT.developer}, a local
             developer with 10+ years and 500+ families housed.
           </p>

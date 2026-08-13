@@ -20,11 +20,23 @@ export const PROJECT = {
   rera: "PR1330002600686",
   startingPrice: "₹29.99 Lakh*",
   startingPriceRaw: "29,99,999",
-  location: "Opp. Xperia Mall, Nilje, Dombivli East",
+  location: "Nilje, Dombivli East",
   city: "Dombivli East, Maharashtra",
   phone: "+91 93244 66477",
   phoneRaw: "919324466477",
   brochure: "/brochure.pdf",
+} as const;
+
+// Distances measured from the GEO pin above against OpenStreetMap road routing
+// (Aug 2026), replacing the earlier "opposite Xperia Mall" claim:
+//   Lodha Xperia Mall  — 1.03 km straight line, 1.95 km by road  -> a drive, not a walk
+//   Nilje (Nilaje) stn — 0.65 km straight line, 1.03 km by road  -> genuinely walkable
+//   Kalyan-Shil Road   — 1.70 km straight line
+// Keep every user-facing distance sourced from here so no page can drift back to an
+// unverifiable claim. Re-check these before advertising any new figure.
+export const NEARBY = {
+  mall: "5 min drive to Xperia Mall",
+  station: "12 min walk to Nilje Railway Station",
 } as const;
 
 export const waLink = (msg: string) =>
@@ -87,7 +99,7 @@ export const KEYWORD_VARIATIONS: string[] = [
 ];
 
 // Google Maps — pinned to the exact project coordinates (GEO above).
-export const MAP_QUERY = "Blossom Residency, Opp. Xperia Mall, Nilje, Dombivli East, Maharashtra 421204";
+export const MAP_QUERY = "Blossom Residency, Nilje, Dombivli East, Maharashtra 421204";
 export const MAP_POINT = `${GEO.lat},${GEO.lng}`;
 export const MAP_EMBED = `https://www.google.com/maps?q=${MAP_POINT}&z=17&output=embed`;
 export const MAP_LINK = `https://www.google.com/maps/search/?api=1&query=${MAP_POINT}`;
@@ -104,7 +116,8 @@ export const AMENITIES = [
   { name: "Sun Bath Beds", icon: "Sun", tint: "orange", img: "/images/amenities/sunbath.jpg" },
   { name: "Sand Pit for Toddlers", icon: "Baby", tint: "sand", img: "/images/amenities/sandpit.jpg" },
   { name: "Bonfire Area", icon: "Flame", tint: "ember", img: "/images/amenities/bonfire.jpg" },
-  { name: "Indoor Games Zone", icon: "Gamepad2", tint: "violet", img: "/images/amenities/games.jpg" },
+  // Temporarily hidden — re-enable when the indoor games zone is confirmed in the project plan.
+  // { name: "Indoor Games Zone", icon: "Gamepad2", tint: "violet", img: "/images/amenities/games.jpg" },
   { name: "Ample Car Parking", icon: "Car", tint: "graphite", img: "/images/amenities/parking.jpg" },
 ] as const;
 
@@ -140,7 +153,7 @@ export const CONFIGURATIONS = [
 
 export const WHY_US = [
   "10+ Years in Dombivli",
-  "Opposite Xperia Mall",
+  "12 Min Walk to Nilje Station",
   `${AMENITIES.length}+ Premium Amenities`,
   "Zero Hidden Charges",
   "500+ Happy Families",
@@ -158,7 +171,7 @@ export const TESTIMONIALS = [
   {
     name: "Rahul Sharma",
     location: "Dombivli East",
-    text: "We visited three sites before Blossom Residency. The quality of construction and the location opposite Xperia Mall sealed it for us. Shree Construction team was transparent from day one — no hidden charges.",
+    text: "We visited three sites before Blossom Residency. The quality of construction and the location — walking distance to Nilje station, minutes from Xperia Mall — sealed it for us. Shree Construction team was transparent from day one — no hidden charges.",
     config: "2 BHK Buyer",
   },
   {
@@ -180,15 +193,18 @@ export const TESTIMONIALS = [
 // reviews come in (honest values avoid Google's review-spam manual action).
 export const RATING = { value: "4.8", count: 6 } as const;
 
+// Times below are road-routed from the GEO pin (see NEARBY). Walk figures assume a
+// ~4.8 km/h pace; drive figures assume ~25 km/h on local roads.
 export const LOCATION = [
-  { place: "Xperia Mall & PVR Cinema", detail: "Right opposite — shopping & entertainment", time: "0 min" },
-  { place: "Hedutane Metro Station", detail: "Upcoming metro connectivity nearby", time: "Upcoming" },
-  { place: "Dombivli Railway Station", detail: "Easy access to the central line", time: "Nearby" },
-  { place: "Kalyan–Shil Road", detail: "Direct connectivity to highways", time: "Nearby" },
-  { place: "Navi Mumbai & Thane", detail: "Quick inter-city access", time: "Connected" },
-  { place: "Schools & Colleges", detail: "Ryan, Euro School, IRA Global & more", time: "Close" },
-  { place: "Hospitals & Medical", detail: "Multi-specialty care in proximity", time: "Close" },
-  { place: "D-Mart & Daily Markets", detail: "Everyday essentials at your doorstep", time: "Close" },
+  { place: "Nilje Railway Station", detail: "Walk to the local line — about 1 km", time: "12 min walk" },
+  { place: "Xperia Mall & PVR Cinema", detail: "Shopping, dining & multiplex on Kalyan-Shil Road", time: "5 min drive" },
+  { place: "Hospitals & Medical", detail: "Manav Kalyan & Ratnadeep under 400 m; MGM ~1.2 km", time: "5 min walk" },
+  { place: "Hedutane Metro Station", detail: "Upcoming Kalyan–Taloja metro connectivity", time: "Upcoming" },
+  { place: "Kalyan–Shil Road", detail: "Direct connectivity to highways — about 1.7 km", time: "5 min drive" },
+  { place: "Dombivli Railway Station", detail: "Central line — about 9.5 km by road", time: "25 min drive" },
+  { place: "Navi Mumbai & Thane", detail: "Quick inter-city access via Kalyan-Shil Road", time: "Connected" },
+  { place: "Schools & Colleges", detail: "Ryan, Euro School, IRA Global & more in Palava", time: "Close" },
+  { place: "Daily Markets & Retail", detail: "Everyday essentials within walking distance", time: "Close" },
 ] as const;
 
 export const INVESTMENT = [
@@ -219,7 +235,7 @@ export const FAQS = [
   },
   {
     q: "Where exactly is the project located?",
-    a: "Blossom Residency is located opposite Xperia Mall at Nilje, Dombivli East — with upcoming metro connectivity, easy railway access and direct links to Kalyan-Shil Road, Navi Mumbai and Thane.",
+    a: "Blossom Residency is located at Nilje, Dombivli East — about a 12 minute walk from Nilje Railway Station and a 5 minute drive from Xperia Mall, with upcoming metro connectivity and direct links to Kalyan-Shil Road, Navi Mumbai and Thane.",
   },
   {
     q: "What is the starting price?",
@@ -227,7 +243,7 @@ export const FAQS = [
   },
   {
     q: "What amenities does the project offer?",
-    a: "Residents enjoy 24x7 security with CCTV surveillance, a landscaped garden, kids play area, rooftop amenities, a yoga & meditation deck, outdoor gym, sun-bath beds, a sand pit for toddlers, a bonfire area, indoor games and ample parking.",
+    a: "Residents enjoy 24x7 security with CCTV surveillance, a landscaped garden, kids play area, rooftop amenities, a yoga & meditation deck, outdoor gym, sun-bath beds, a sand pit for toddlers, a bonfire area and ample parking.",
   },
   {
     q: "What is the price of a 1 BHK flat in Blossom Residency Dombivli?",
@@ -246,8 +262,8 @@ export const FAQS = [
     a: `Yes. Because the project is MahaRERA-registered (${PROJECT.rera}), apartments are eligible for home loans from leading banks and housing finance companies. Our team can connect you with loan partners for quick approvals.`,
   },
   {
-    q: "How far is Blossom Residency from Dombivli railway station?",
-    a: "Blossom Residency sits opposite Xperia Mall in Nilje, Dombivli East, with quick access to Dombivli Railway Station on the Central Line, the upcoming Hedutane metro station, and direct connectivity to Kalyan-Shil Road, Thane and Navi Mumbai.",
+    q: "How far is Blossom Residency from the railway station?",
+    a: "Nilje Railway Station is about 1 km away — roughly a 12 minute walk. Dombivli Railway Station on the Central Line is about 9.5 km, or a 25 minute drive. The upcoming Hedutane metro station and direct connectivity to Kalyan-Shil Road, Thane and Navi Mumbai are also close by.",
   },
   {
     q: "Is Blossom Residency a good investment?",
@@ -259,7 +275,7 @@ export const FAQS = [
   },
   {
     q: "Do you have flats or apartments for sale in Dombivli East?",
-    a: "Yes. Whether you call them flats, apartments or homes, Blossom Residency offers 1 BHK and 2 BHK residences for sale in Dombivli East — opposite Xperia Mall in Nilje, ready for site visits and bookings now.",
+    a: "Yes. Whether you call them flats, apartments or homes, Blossom Residency offers 1 BHK and 2 BHK residences for sale in Dombivli East — in Nilje, minutes from Xperia Mall, ready for site visits and bookings now.",
   },
   {
     q: "Are there affordable, ready-to-move or new flats available?",

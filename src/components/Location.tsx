@@ -1,5 +1,5 @@
-import { MapPin, TrendingUp, Navigation, ExternalLink } from "lucide-react";
-import { LOCATION, INVESTMENT, PROJECT, MAP_EMBED, MAP_LINK, MAP_DIRECTIONS } from "@/lib/data";
+import { MapPin, Footprints, Car, TrendingUp, Navigation, ExternalLink } from "lucide-react";
+import { LOCATION, INVESTMENT, PROJECT, NEARBY, MAP_EMBED, MAP_LINK, MAP_DIRECTIONS } from "@/lib/data";
 import Reveal from "./Reveal";
 
 export default function Location() {
@@ -14,8 +14,9 @@ export default function Location() {
             Prime connectivity, <span className="gold-text">best investment</span>
           </h2>
           <p className="mt-4 text-sand/65">
-            Strategically located at Nilje, Dombivli East — seamless access to malls, metro, railway
-            and highways makes it ideal for both home-buyers and investors.
+            Strategically located at Nilje, Dombivli East — about a 12 minute walk to Nilje Railway
+            Station and a 5 minute drive to Xperia Mall, with seamless access to metro and highways.
+            Ideal for both home-buyers and investors.
           </p>
         </Reveal>
 
@@ -41,8 +42,16 @@ export default function Location() {
                     Open in Google Maps
                   </span>
                 </a>
-                <span className="pointer-events-none absolute left-4 top-4 z-20 inline-flex items-center gap-1.5 rounded-full bg-ink/80 px-3 py-1.5 text-xs font-medium text-sand backdrop-blur">
-                  <MapPin size={13} className="text-gold" /> Opp. Xperia Mall, Nilje
+                <span className="pointer-events-none absolute left-4 top-4 z-20 flex max-w-[calc(100%-2rem)] flex-col items-start gap-1.5">
+                  <span className="inline-flex items-center gap-1.5 rounded-full bg-ink/80 px-3 py-1.5 text-xs font-medium text-sand backdrop-blur">
+                    <MapPin size={13} className="text-gold" /> {PROJECT.location}
+                  </span>
+                  <span className="inline-flex items-center gap-1.5 rounded-full bg-ink/80 px-3 py-1.5 text-xs font-medium text-sand backdrop-blur">
+                    <Footprints size={13} className="text-gold" /> {NEARBY.station}
+                  </span>
+                  <span className="inline-flex items-center gap-1.5 rounded-full bg-ink/80 px-3 py-1.5 text-xs font-medium text-sand backdrop-blur">
+                    <Car size={13} className="text-gold" /> {NEARBY.mall}
+                  </span>
                 </span>
               </div>
               <a

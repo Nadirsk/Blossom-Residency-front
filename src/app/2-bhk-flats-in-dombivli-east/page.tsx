@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
-import { Check, MapPin, Ruler, IndianRupee, ShieldCheck, Home } from "lucide-react";
+import { Check, MapPin, Footprints, TrainFront, Ruler, IndianRupee, ShieldCheck, Home } from "lucide-react";
 import PageShell from "@/components/PageShell";
 import PageHero from "@/components/PageHero";
 import FaqBlock from "@/components/FaqBlock";
@@ -11,7 +11,7 @@ import { buildPageJsonLd, jsonLdScript } from "@/lib/seo";
 import { PROJECT, SITE_URL } from "@/lib/data";
 
 const PATH = "/2-bhk-flats-in-dombivli-east";
-const DESCRIPTION = `2 BHK flats for sale in Dombivli East at Blossom Residency, opposite Xperia Mall, Nilje. 588 sq ft carpet, twin bedrooms, Vastu-compliant. MahaRERA ${PROJECT.rera}. Get the price on request.`;
+const DESCRIPTION = `2 BHK flats for sale in Dombivli East at Blossom Residency, Nilje — a 12 min walk to Nilje station. 588 sq ft carpet, twin bedrooms, Vastu-compliant. MahaRERA ${PROJECT.rera}. Get the price on request.`;
 
 export const metadata: Metadata = {
   title: "2 BHK Flats in Dombivli East",
@@ -36,7 +36,7 @@ const FAQS = [
   },
   {
     q: "Is the 2 BHK suitable for a family?",
-    a: "Yes. With twin bedrooms, a wide balcony and 588 sq ft of carpet area opposite Xperia Mall, the 2 BHK is designed for growing families who want space, light and everyday convenience.",
+    a: "Yes. With twin bedrooms, a wide balcony and 588 sq ft of carpet area minutes from Xperia Mall, the 2 BHK is designed for growing families who want space, light and everyday convenience.",
   },
   {
     q: "Is Blossom Residency RERA approved?",
@@ -48,7 +48,9 @@ const SPECS = [
   { icon: Ruler, label: "Carpet area", value: "588 sq ft" },
   { icon: Home, label: "Configuration", value: "Twin bedrooms" },
   { icon: IndianRupee, label: "Price", value: "On request" },
-  { icon: MapPin, label: "Location", value: "Opp. Xperia Mall, Nilje" },
+  { icon: MapPin, label: "Location", value: PROJECT.location },
+  { icon: TrainFront, label: "Nilje Station", value: "12 min walk" },
+  { icon: Footprints, label: "Xperia Mall", value: "5 min drive" },
   { icon: ShieldCheck, label: "MahaRERA", value: PROJECT.rera },
 ];
 
@@ -73,7 +75,7 @@ export default function Page() {
         eyebrow="2 BHK Residences"
         title="2 BHK Flats in"
         highlight="Dombivli East"
-        subtitle={`Spacious 588 sq ft carpet, twin-bedroom 2 BHK homes at Blossom Residency — opposite Xperia Mall, Nilje, Dombivli East. Vastu-compliant layouts in a ${PROJECT.tower.toLowerCase()} by ${PROJECT.developer}.`}
+        subtitle={`Spacious 588 sq ft carpet, twin-bedroom 2 BHK homes at Blossom Residency — Nilje, Dombivli East, about a 12 minute walk from Nilje Railway Station. Vastu-compliant layouts in a ${PROJECT.tower.toLowerCase()} by ${PROJECT.developer}.`}
         crumbs={[
           { name: "Home", href: "/" },
           { name: "2 BHK Flats in Dombivli East" },
@@ -90,7 +92,7 @@ export default function Page() {
               The 2 BHK at Blossom Residency gives your family 588 sq ft of well-planned carpet area —
               twin bedrooms, an airy living and dining space, and a wide balcony that pulls in natural
               light. Every layout is Vastu-compliant and built for the way modern families actually
-              live, just across the road from Xperia Mall and PVR.
+              live, a 5 minute drive from Xperia Mall and PVR.
             </p>
             <p className="mt-4 text-base leading-relaxed text-sand/70">
               It&apos;s part of a {PROJECT.tower.toLowerCase()} across {PROJECT.buildings.toLowerCase()},
@@ -107,7 +109,7 @@ export default function Page() {
                 "588 sq ft Vastu-compliant carpet",
                 "Twin bedrooms + wide balcony",
                 "11+ premium lifestyle amenities",
-                "Opposite Xperia Mall & PVR",
+                "12 min walk to Nilje station",
                 "Home-loan ready (MahaRERA registered)",
                 "Zero hidden charges",
               ].map((f) => (

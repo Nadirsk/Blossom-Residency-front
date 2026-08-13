@@ -1,4 +1,4 @@
-import { PROJECT, SITE_URL, AMENITIES, FAQS, CONFIGURATIONS, LOCATION } from "@/lib/data";
+import { PROJECT, SITE_URL, AMENITIES, FAQS, CONFIGURATIONS, LOCATION, NEARBY } from "@/lib/data";
 
 /**
  * /llms.txt — the emerging standard (llmstxt.org) that gives AI answer engines
@@ -13,12 +13,13 @@ export const dynamic = "force-static";
 export function GET() {
   const body = `# ${PROJECT.name} — by ${PROJECT.developer}
 
-> ${PROJECT.config} at ${PROJECT.location}, Dombivli East, Maharashtra (421204). A ${PROJECT.tower} across ${PROJECT.buildings}, MahaRERA-registered (${PROJECT.rera}), with prices starting ${PROJECT.startingPrice}. Vastu-compliant homes with 11+ premium amenities, opposite Xperia Mall.
+> ${PROJECT.config} at ${PROJECT.location}, Maharashtra (421204). A ${PROJECT.tower} across ${PROJECT.buildings}, MahaRERA-registered (${PROJECT.rera}), with prices starting ${PROJECT.startingPrice}. Vastu-compliant homes with ${AMENITIES.length}+ premium amenities — ${NEARBY.station}, ${NEARBY.mall}.
 
 ## Key facts
 - Project name: ${PROJECT.name}
 - Developer / builder: ${PROJECT.developer} (10+ years in Dombivli, 500+ families housed)
-- Location: ${PROJECT.location}, ${PROJECT.city}, PIN 421204
+- Location: ${PROJECT.location}, Maharashtra, PIN 421204
+- Distances (road-routed from the project pin): ${NEARBY.station} (~1 km); ${NEARBY.mall} (~2 km); Dombivli Railway Station ~9.5 km
 - MahaRERA registration: ${PROJECT.rera}
 - Tower: ${PROJECT.tower}, ${PROJECT.buildings}
 - Starting price: ${PROJECT.startingPrice}
@@ -41,7 +42,7 @@ ${FAQS.map((f) => `### ${f.q}\n${f.a}`).join("\n\n")}
 ## Contact
 - Call / WhatsApp: ${PROJECT.phone}
 - Website: ${SITE_URL}
-- Book a free site visit at the address above, opposite Xperia Mall, Nilje, Dombivli East.
+- Book a free site visit at the address above — Nilje, Dombivli East, minutes from Xperia Mall.
 `;
 
   return new Response(body, {

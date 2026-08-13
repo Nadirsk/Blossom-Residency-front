@@ -19,7 +19,7 @@ export const BLOG_POSTS = [
     slug: "is-dombivli-east-good-for-property-investment-in-2026",
     title: "Is Dombivli East Good for Property Investment in 2026?",
     excerpt:
-      "A data-led look at why Dombivli East — and the Nilje corridor opposite Xperia Mall — is one of the Mumbai Metropolitan Region's fastest-growing affordable-housing markets.",
+      "A data-led look at why Dombivli East — and the Nilje corridor around Xperia Mall — is one of the Mumbai Metropolitan Region's fastest-growing affordable-housing markets.",
     datePublished: "2026-06-20",
     readMins: 6,
   },

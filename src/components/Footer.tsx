@@ -65,7 +65,7 @@ export default function Footer() {
                 className="flex items-start gap-3 hover:text-gold"
               >
                 <MapPin size={16} className="mt-0.5 shrink-0 text-gold" />
-                {PROJECT.location}, {PROJECT.city}
+                {PROJECT.location}, Maharashtra 421204
               </a>
             </li>
             <li>
