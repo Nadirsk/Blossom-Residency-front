@@ -2,7 +2,7 @@
 
 Goal: rank top-10 (ideally #1–3) for "Blossom Residency", "1 & 2 BHK flats in Dombivli East",
 and related local property searches across Google Search, Google Maps, AI Overviews, and AI
-answer engines (ChatGPT, Perplexity, Gemini, Claude).
+answer engines (ChatGPT, Perplexity, Gemini, Claude).   
 
 > Honest expectation setting: For your **brand name** ("Blossom Residency", "Shree Construction
 > Blossom Residency") top-1 is achievable within weeks. For **competitive generic local terms**
