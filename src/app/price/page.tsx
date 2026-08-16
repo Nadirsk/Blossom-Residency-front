@@ -10,7 +10,7 @@ import { buildPageJsonLd, jsonLdScript } from "@/lib/seo";
 import { PROJECT, SITE_URL, CONFIGURATIONS } from "@/lib/data";
 
 const PATH = "/price";
-const DESCRIPTION = `Blossom Residency price list — 1 BHK from ${PROJECT.startingPrice} (~430 sq ft), 2 BHK (588 sq ft) on request. Dombivli East. MahaRERA ${PROJECT.rera}.`;
+const DESCRIPTION = `Blossom Residency price list — 1 BHK from ${PROJECT.startingPrice} (~434 sq ft), 2 BHK (588 sq ft) on request. Dombivli East. MahaRERA ${PROJECT.rera}.`;
 
 export const metadata: Metadata = {
   title: "Price & Payment Plan",
@@ -27,7 +27,7 @@ export const metadata: Metadata = {
 const FAQS = [
   {
     q: "What is the starting price at Blossom Residency?",
-    a: `Homes start from ${PROJECT.startingPrice}. The 1 BHK (~430 sq ft carpet) starts at this price; 2 BHK (588 sq ft) pricing is shared on request, as it varies by floor and unit.`,
+    a: `Homes start from ${PROJECT.startingPrice}. The 1 BHK (~434 sq ft carpet) starts at this price; 2 BHK (588 sq ft) pricing is shared on request, as it varies by floor and unit.`,
   },
   {
     q: "Are there any hidden charges?",

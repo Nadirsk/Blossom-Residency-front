@@ -11,7 +11,7 @@ import { buildPageJsonLd, jsonLdScript } from "@/lib/seo";
 import { PROJECT, SITE_URL } from "@/lib/data";
 
 const PATH = "/1-bhk-flats-in-dombivli-east";
-const DESCRIPTION = `1 BHK flats in Dombivli East from ${PROJECT.startingPrice} — ~430 sq ft carpet (≈₹6,980/sq ft), 12 min walk to Nilje station. New MahaRERA project (${PROJECT.rera}) by ${PROJECT.developer}. Price sheet & EMI on request.`;
+const DESCRIPTION = `1 BHK flats in Dombivli East from ${PROJECT.startingPrice} — ~434 sq ft carpet (≈₹6,910/sq ft), 12 min walk to Nilje station. New MahaRERA project (${PROJECT.rera}) by ${PROJECT.developer}. Price sheet & EMI on request.`;
 
 export const metadata: Metadata = {
   title: "1 BHK Flats in Dombivli East",
@@ -47,11 +47,11 @@ const EMI_ROWS = [
 const FAQS = [
   {
     q: "What is the price of a 1 BHK flat in Dombivli East at Blossom Residency?",
-    a: `1 BHK homes at Blossom Residency start from ${PROJECT.startingPrice} for approximately 430 sq ft carpet area. The final price depends on the floor and unit — request the latest price sheet on WhatsApp for exact figures.`,
+    a: `1 BHK homes at Blossom Residency start from ${PROJECT.startingPrice} for approximately 434 sq ft carpet area. The final price depends on the floor and unit — request the latest price sheet on WhatsApp for exact figures.`,
   },
   {
     q: "What is the carpet area of the 1 BHK?",
-    a: "The 1 BHK apartments offer approximately 430 sq ft carpet area, with a Vastu-compliant, sun-lit living room and a wide balcony.",
+    a: "The 1 BHK apartments offer approximately 434 sq ft carpet area, with a Vastu-compliant, sun-lit living room and a wide balcony.",
   },
   {
     q: "Is the 1 BHK at Blossom Residency Vastu-compliant?",
@@ -71,7 +71,7 @@ const FAQS = [
   },
   {
     q: "Are there affordable 1 BHK flats in Dombivli under 30 lakhs?",
-    a: `Yes. The 1 BHK at Blossom Residency starts at ${PROJECT.startingPrice} for approximately 430 sq ft carpet area — about ₹6,980 per sq ft carpet — in a new, MahaRERA-registered building in Nilje, Dombivli East. Request the current price sheet for unit-wise figures.`,
+    a: `Yes. The 1 BHK at Blossom Residency starts at ${PROJECT.startingPrice} for approximately 434 sq ft carpet area — about ₹6,910 per sq ft carpet — in a new, MahaRERA-registered building in Nilje, Dombivli East. Request the current price sheet for unit-wise figures.`,
   },
   {
     q: "How far is the 1 BHK from the railway station?",
@@ -97,7 +97,7 @@ const DISTANCES = [
 ];
 
 const SPECS = [
-  { icon: Ruler, label: "Carpet area", value: "~430 sq ft" },
+  { icon: Ruler, label: "Carpet area", value: "~434 sq ft" },
   { icon: IndianRupee, label: "Starting price", value: PROJECT.startingPrice },
   { icon: MapPin, label: "Location", value: PROJECT.location },
   { icon: TrainFront, label: "Nilje Station", value: "12 min walk" },
@@ -115,7 +115,7 @@ export default function Page() {
       { name: "1 BHK Flats in Dombivli East", path: PATH },
     ],
     faqs: FAQS,
-    apartment: { type: "1 BHK", rooms: 1, sqft: "430", carpet: "~430 sq ft carpet", priceRaw: PROJECT.startingPriceRaw.replace(/,/g, "") },
+    apartment: { type: "1 BHK", rooms: 1, sqft: "434", carpet: "~434 sq ft carpet", priceRaw: PROJECT.startingPriceRaw.replace(/,/g, "") },
   });
 
   return (
@@ -126,7 +126,7 @@ export default function Page() {
         eyebrow="1 BHK Residences"
         title="1 BHK Flats in"
         highlight="Dombivli East"
-        subtitle={`Spacious, Vastu-compliant 1 BHK homes at Blossom Residency — Nilje, Dombivli East, about a 12 minute walk from Nilje Railway Station. Approximately 430 sq ft carpet, starting ${PROJECT.startingPrice}, in a ${PROJECT.tower.toLowerCase()} by ${PROJECT.developer}.`}
+        subtitle={`Spacious, Vastu-compliant 1 BHK homes at Blossom Residency — Nilje, Dombivli East, about a 12 minute walk from Nilje Railway Station. Approximately 434 sq ft carpet, starting ${PROJECT.startingPrice}, in a ${PROJECT.tower.toLowerCase()} by ${PROJECT.developer}.`}
         crumbs={[
           { name: "Home", href: "/" },
           { name: "1 BHK Flats in Dombivli East" },
@@ -142,7 +142,7 @@ export default function Page() {
             </h2>
             <p className="mt-5 text-base leading-relaxed text-sand/70">
               Looking for a 1 BHK flat in Dombivli East that doesn&apos;t compromise on space or light?
-              The 1 BHK at Blossom Residency offers approximately 430 sq ft of efficient carpet area —
+              The 1 BHK at Blossom Residency offers approximately 434 sq ft of efficient carpet area —
               a sun-lit living room, a comfortable bedroom and a wide balcony, all laid out to a
               Vastu-compliant plan. It&apos;s an ideal first home for young families and a smart,
               rent-ready investment in one of Dombivli&apos;s fastest-growing pockets.
@@ -155,7 +155,7 @@ export default function Page() {
 
             <ul className="mt-8 grid grid-cols-1 gap-3 sm:grid-cols-2">
               {[
-                "~430 sq ft Vastu-compliant carpet",
+                "~434 sq ft Vastu-compliant carpet",
                 "Sun-lit living room & wide balcony",
                 "11+ premium lifestyle amenities",
                 "12 min walk to Nilje station",
@@ -233,8 +233,8 @@ export default function Page() {
             1 BHK price in Dombivli East — <span className="gold-text">what it actually costs</span>
           </h2>
           <p className="mt-4 max-w-3xl text-base leading-relaxed text-sand/70">
-            A 1 BHK at Blossom Residency starts at {PROJECT.startingPrice} for roughly 430 sq ft of
-            carpet area — about ₹6,980 per sq ft carpet. That puts it in the entry band for new,
+            A 1 BHK at Blossom Residency starts at {PROJECT.startingPrice} for roughly 434 sq ft of
+            carpet area — about ₹6,910 per sq ft carpet. That puts it in the entry band for new,
             RERA-registered construction in Dombivli, where most 1 BHK inventory of this vintage sits
             well above it. The final figure moves with the floor and the specific unit, so treat the
             starting price as the floor and ask for the live price sheet before you budget.
@@ -245,7 +245,7 @@ export default function Page() {
               <h3 className="font-serif text-xl text-white">What goes into the total</h3>
               <ul className="mt-4 space-y-3 text-sm leading-relaxed text-sand/70">
                 {[
-                  ["Agreement value", `Starts ${PROJECT.startingPrice} for ~430 sq ft carpet`],
+                  ["Agreement value", `Starts ${PROJECT.startingPrice} for ~434 sq ft carpet`],
                   ["Stamp duty & registration", "At the prevailing Maharashtra rates on the agreement value"],
                   ["GST", "As applicable to under-construction homes at the time of booking"],
                   ["Maintenance & deposits", "Shared as part of the written cost sheet — no verbal add-ons"],
@@ -354,7 +354,7 @@ export default function Page() {
           <div className="mt-8 grid gap-5 sm:grid-cols-2">
             <div className="rounded-3xl border border-gold/30 bg-gold/[0.06] p-6">
               <h3 className="font-serif text-2xl text-white">1 BHK</h3>
-              <p className="mt-1 text-sm text-gold">~430 sq ft carpet · from {PROJECT.startingPrice}</p>
+              <p className="mt-1 text-sm text-gold">~434 sq ft carpet · from {PROJECT.startingPrice}</p>
               <ul className="mt-5 space-y-2.5 text-sm text-sand/75">
                 {[
                   "First home for couples & small families",
@@ -375,7 +375,7 @@ export default function Page() {
               <ul className="mt-5 space-y-2.5 text-sm text-sand/75">
                 {[
                   "Twin bedrooms for growing families",
-                  "~158 sq ft more carpet than the 1 BHK",
+                  "~154 sq ft more carpet than the 1 BHK",
                   "Room for a work-from-home setup",
                   "Wider balcony off the living area",
                 ].map((x) => (

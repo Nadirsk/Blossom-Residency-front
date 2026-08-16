@@ -114,7 +114,7 @@ keyword surface that helps you match searches. Add **all** of these:
 > *"Spacious Vastu-compliant 1 BHK flats for sale in Dombivli East, opposite Xperia Mall, starting ₹29.99 Lakh."*
 
 ### 3.5 Products (add 2 product cards with photo + price)
-- **1 BHK Apartment** — ~430 sq ft carpet — ₹29.99 Lakh* — link to website
+- **1 BHK Apartment** — ~434 sq ft carpet — ₹29.99 Lakh* — link to website
 - **2 BHK Apartment** — 588 sq ft carpet — Price on request — link to website
 
 ### 3.6 Attributes (toggle on those that apply)

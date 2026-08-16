@@ -31,7 +31,7 @@ const FAQS = [
   },
   {
     q: "What configurations does this new project offer?",
-    a: "Blossom Residency offers Vastu-compliant 1 BHK (~430 sq ft carpet) and 2 BHK (588 sq ft carpet) apartments, with 11+ premium amenities.",
+    a: "Blossom Residency offers Vastu-compliant 1 BHK (~434 sq ft carpet) and 2 BHK (588 sq ft carpet) apartments, with 11+ premium amenities.",
   },
   {
     q: "Why buy in a new project in Dombivli East?",

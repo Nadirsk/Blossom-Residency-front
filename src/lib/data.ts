@@ -131,8 +131,8 @@ export const HIGHLIGHTS = [
 export const CONFIGURATIONS = [
   {
     type: "1 BHK",
-    carpet: "~430 sq ft carpet",
-    sqft: "430",
+    carpet: "~434 sq ft carpet",
+    sqft: "434",
     price: "₹29.99 L*",
     note: "Vastu-compliant · Sun-lit living",
     plan: "/images/plan-1bhk.jpg",
@@ -247,11 +247,11 @@ export const FAQS = [
   },
   {
     q: "What is the price of a 1 BHK flat in Blossom Residency Dombivli?",
-    a: `1 BHK homes at Blossom Residency start from ${PROJECT.startingPrice} for approximately 430 sq ft carpet area. The final price depends on the floor and unit — request the latest price sheet on WhatsApp and our team will share full details.`,
+    a: `1 BHK homes at Blossom Residency start from ${PROJECT.startingPrice} for approximately 434 sq ft carpet area. The final price depends on the floor and unit — request the latest price sheet on WhatsApp and our team will share full details.`,
   },
   {
     q: "What is the carpet area of the flats?",
-    a: "The 1 BHK apartments offer approximately 430 sq ft carpet area and the 2 BHK apartments offer 588 sq ft carpet area, with Vastu-compliant, sun-lit layouts and wide balconies.",
+    a: "The 1 BHK apartments offer approximately 434 sq ft carpet area and the 2 BHK apartments offer 588 sq ft carpet area, with Vastu-compliant, sun-lit layouts and wide balconies.",
   },
   {
     q: "Who is the builder of Blossom Residency?",

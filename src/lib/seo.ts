@@ -165,7 +165,7 @@ export function buildJsonLd() {
           { "@type": "PropertyValue", name: "MahaRERA", value: PROJECT.rera },
           { "@type": "PropertyValue", name: "Configuration", value: PROJECT.tower },
           { "@type": "PropertyValue", name: "Buildings", value: PROJECT.buildings },
-          { "@type": "PropertyValue", name: "1 BHK Carpet Area", value: "430 sq ft" },
+          { "@type": "PropertyValue", name: "1 BHK Carpet Area", value: "434 sq ft" },
           { "@type": "PropertyValue", name: "2 BHK Carpet Area", value: "588 sq ft" },
         ],
         aggregateRating,
