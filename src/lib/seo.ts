@@ -27,6 +27,33 @@ const address = {
 
 const geo = { "@type": "GeoCoordinates", latitude: GEO.lat, longitude: GEO.lng };
 
+/** Validity window for every published Offer. VALID_FROM is the date the site
+ *  went live; PRICE_VALID_UNTIL must stay a future date or Google drops the price
+ *  from the snippet — push it forward whenever the price sheet is refreshed. */
+const VALID_FROM = "2026-06-24";
+const PRICE_VALID_UNTIL = "2027-12-31";
+
+/** A home is not a shippable good, but Google's Merchant listing validator still
+ *  expects shippingDetails / hasMerchantReturnPolicy on any Offer it sees. These
+ *  declare the non-shippable reality (zero rate, no transit, no returns) so the
+ *  warnings clear without asserting anything untrue. */
+const RETURN_POLICY = {
+  "@type": "MerchantReturnPolicy",
+  applicableCountry: "IN",
+  returnPolicyCategory: "https://schema.org/MerchantReturnNotPermitted",
+};
+
+const SHIPPING_DETAILS = {
+  "@type": "OfferShippingDetails",
+  shippingRate: { "@type": "MonetaryAmount", value: 0, currency: "INR" },
+  shippingDestination: { "@type": "DefinedRegion", addressCountry: "IN" },
+  deliveryTime: {
+    "@type": "ShippingDeliveryTime",
+    handlingTime: { "@type": "QuantitativeValue", minValue: 0, maxValue: 0, unitCode: "DAY" },
+    transitTime: { "@type": "QuantitativeValue", minValue: 0, maxValue: 0, unitCode: "DAY" },
+  },
+};
+
 const areaServed = [
   { "@type": "City", name: "Dombivli" },
   { "@type": "City", name: "Kalyan" },
@@ -174,7 +201,8 @@ export function buildJsonLd() {
           "@type": "Offer",
           priceCurrency: "INR",
           price: PROJECT.startingPriceRaw.replace(/,/g, ""),
-          priceValidUntil: "2026-12-31",
+          validFrom: VALID_FROM,
+          priceValidUntil: PRICE_VALID_UNTIL,
           priceSpecification: {
             "@type": "PriceSpecification",
             priceCurrency: "INR",
@@ -185,11 +213,8 @@ export function buildJsonLd() {
           itemCondition: "https://schema.org/NewCondition",
           url: SITE_URL,
           seller: { "@id": `${SITE_URL}/#organization` },
-          hasMerchantReturnPolicy: {
-            "@type": "MerchantReturnPolicy",
-            applicableCountry: "IN",
-            returnPolicyCategory: "https://schema.org/MerchantReturnNotPermitted",
-          },
+          shippingDetails: SHIPPING_DETAILS,
+          hasMerchantReturnPolicy: RETURN_POLICY,
         },
       },
       faqNode(`${SITE_URL}/#faq`, [...FAQS]),
@@ -250,7 +275,10 @@ export function buildPageJsonLd(opts: {
   if (opts.apartment) {
     const a = opts.apartment;
     graph.push({
-      "@type": ["Apartment", "Product"],
+      // Only claim Product when there is an Offer to back it. Google's Product
+      // validator requires offers / review / aggregateRating, so a price-on-request
+      // unit is marked up as a plain Apartment instead.
+      "@type": a.priceRaw ? ["Apartment", "Product"] : "Apartment",
       "@id": `${url}#unit`,
       name: `${a.type} Flat at ${PROJECT.name}, Dombivli East`,
       description: `${a.type} apartment (${a.carpet}) at ${PROJECT.name}, ${PROJECT.location}. MahaRERA ${PROJECT.rera}.`,
@@ -266,16 +294,14 @@ export function buildPageJsonLd(opts: {
               "@type": "Offer",
               priceCurrency: "INR",
               price: a.priceRaw,
-              priceValidUntil: "2026-12-31",
+              validFrom: VALID_FROM,
+              priceValidUntil: PRICE_VALID_UNTIL,
               availability: "https://schema.org/InStock",
               itemCondition: "https://schema.org/NewCondition",
               url,
               seller: { "@id": `${SITE_URL}/#organization` },
-              hasMerchantReturnPolicy: {
-                "@type": "MerchantReturnPolicy",
-                applicableCountry: "IN",
-                returnPolicyCategory: "https://schema.org/MerchantReturnNotPermitted",
-              },
+              shippingDetails: SHIPPING_DETAILS,
+              hasMerchantReturnPolicy: RETURN_POLICY,
             },
           }
         : {}),
