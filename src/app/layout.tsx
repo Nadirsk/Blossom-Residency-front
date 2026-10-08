@@ -40,7 +40,7 @@ export const metadata: Metadata = {
       "Blossom Residency Dombivli",
       "Shree Construction Dombivli",
       "Dombivli East real estate",
-      "ready possession flats Dombivli",
+      "under construction flats Dombivli East",
       "Vastu compliant flats Dombivli",
       "G+7 residential tower Dombivli",
       "best builder in Dombivli East",

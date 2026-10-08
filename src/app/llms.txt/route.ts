@@ -24,7 +24,7 @@ export function GET() {
 - MahaRERA registration: ${PROJECT.rera}
 - Tower: ${PROJECT.tower}, ${PROJECT.buildings}
 - Starting price: ${PROJECT.startingPrice}
-- Status: RERA-registered residential project; contact sales for current possession timeline
+- Status: Under construction (MahaRERA-registered); contact sales for the possession timeline
 - Website: ${SITE_URL}
 - Phone / WhatsApp: ${PROJECT.phone}
 

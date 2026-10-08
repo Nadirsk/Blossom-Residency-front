@@ -85,7 +85,6 @@ keyword surface that helps you match searches. Add **all** of these:
 - 1 & 2 BHK Apartments in Dombivli East
 - Premium Apartments for Sale
 - Affordable Flats in Dombivli East
-- Ready Possession Flats
 - Under-Construction Flats
 - New Residential Project Dombivli East
 - Flats Near Xperia Mall
@@ -151,7 +150,7 @@ buyer questions and feeds keywords into GBP.
 ### Secondary
 - 1 bhk price in dombivli east, 2 bhk price in dombivli east
 - vastu compliant flats dombivli, g+7 project dombivli
-- ready possession / under construction flats dombivli east
+- under construction flats dombivli east
 - best builder in dombivli east, shree construction projects
 - affordable flats dombivli east, flats near hedutane metro
 

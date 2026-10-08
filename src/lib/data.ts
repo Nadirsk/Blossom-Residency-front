@@ -65,7 +65,7 @@ export const HOURS = {
 
 // --- Keyword-variation coverage -------------------------------------------------
 // Buyers phrase the same intent many ways — "flat", "apartment", "home", "ghar",
-// "1bhk", "new project", "ready to move", "affordable". These power the visible
+// "1bhk", "new project", "under construction", "affordable". These power the visible
 // "Popular searches" link cluster (varied anchor text → relevance) and the keyword
 // metadata, so the site matches however someone searches — without stuffing.
 export const POPULAR_SEARCHES: { label: string; href: string }[] = [
@@ -77,7 +77,7 @@ export const POPULAR_SEARCHES: { label: string; href: string }[] = [
   { label: "Flats near Xperia Mall", href: "/flats-in-nilje-dombivli-east" },
   { label: "1 BHK flat in Nilje", href: "/flats-in-nilje-dombivli-east" },
   { label: "Affordable flats in Dombivli East", href: "/1-bhk-flats-in-dombivli-east" },
-  { label: "Ready to move flats in Dombivli", href: "/new-projects-in-dombivli-east" },
+  { label: "Under construction flats in Dombivli East", href: "/new-projects-in-dombivli-east" },
   { label: "Flat price in Dombivli East", href: "/price" },
   { label: "Property in Nilje Dombivli", href: "/flats-in-nilje-dombivli-east" },
   { label: "Vastu flats in Dombivli East", href: "/amenities" },
@@ -91,7 +91,7 @@ export const KEYWORD_VARIATIONS: string[] = [
   "flat for sale in dombivli east", "buy flat in dombivli east", "house in dombivli east",
   "new flat in dombivli", "new flats in dombivli east", "new project in dombivli east",
   "1 bhk flat in dombivli east", "2 bhk flat in dombivli east", "one bhk in dombivli", "two bhk in dombivli",
-  "ready to move flats in dombivli", "under construction flats in dombivli east",
+  "under construction flats in dombivli east", "new launch flats in dombivli east",
   "affordable flats in dombivli east", "budget flats in dombivli", "cheap flats in dombivli east",
   "premium flats in dombivli east", "luxury apartments in dombivli east",
   "flats near xperia mall", "property in nilje dombivli", "flats in nilje", "1 bhk flat in nilje",
@@ -285,7 +285,7 @@ export const FAQS = [
     a: "Yes. Whether you call them flats, apartments or homes, Blossom Residency offers 1 BHK and 2 BHK residences for sale in Dombivli East — in Nilje, minutes from Xperia Mall, ready for site visits and bookings now.",
   },
   {
-    q: "Are there affordable, ready-to-move or new flats available?",
-    a: `Blossom Residency is a new residential project with thoughtfully sized, affordable 1 & 2 BHK homes starting ${PROJECT.startingPrice}. For the current possession status (ready-to-move vs under-construction units) and availability, contact our team for the latest update.`,
+    q: "Is Blossom Residency ready to move or under construction?",
+    a: `Blossom Residency is an under-construction, MahaRERA-registered project (${PROJECT.rera}) with affordable 1 & 2 BHK homes starting ${PROJECT.startingPrice}. The completion date is declared on its MahaRERA listing — contact our team for the current construction progress and the possession timeline.`,
   },
 ] as const;
