@@ -170,7 +170,8 @@ buyer questions and feeds keywords into GBP.
 - Ask **every** site visitor and buyer for a Google review; send the GBP review short-link by WhatsApp.
 - Target **10+ in month 1**, then a steady drip (2–4/month) — velocity matters more than total.
 - Reply to **every** review (thank by name, mention "Dombivli East" / "1 BHK" / "2 BHK" naturally).
-- Once you have a verified Google total, update `RATING.count` in `lib/data.ts` to match it honestly.
+- Do NOT put star ratings in the site's schema — on-site testimonials are "self-serving" and a copied GBP rating
+  violates Google's review-snippet policy (removed Oct 2026). Stars come from GBP itself.
 - Seed reviews on portals too (99acres, Housing, MagicBricks) — see §6.
 
 ---

@@ -13,7 +13,9 @@ const PATH = "/price";
 const DESCRIPTION = `Blossom Residency price list — 1 BHK from ${PROJECT.startingPrice} (~434 sq ft), 2 BHK (588 sq ft) on request. Dombivli East. MahaRERA ${PROJECT.rera}.`;
 
 export const metadata: Metadata = {
-  title: "Price & Payment Plan",
+  // GSC: 233 impressions at 0.4% CTR with the generic "Price & Payment Plan" title —
+  // the actual number is what searchers click for, so lead with it.
+  title: { absolute: `Blossom Residency Price List — 1 BHK from ₹29.99L | Dombivli East` },
   description: DESCRIPTION,
   alternates: { canonical: PATH },
   openGraph: {

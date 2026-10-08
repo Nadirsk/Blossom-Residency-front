@@ -1,4 +1,5 @@
 import { PROJECT, SITE_URL, AMENITIES, FAQS, CONFIGURATIONS, LOCATION, NEARBY } from "@/lib/data";
+import { SEO_PAGES, BLOG_POSTS, blogPath } from "@/lib/routes";
 
 /**
  * /llms.txt — the emerging standard (llmstxt.org) that gives AI answer engines
@@ -35,6 +36,10 @@ ${AMENITIES.map((a) => `- ${a.name}`).join("\n")}
 
 ## Location & connectivity
 ${LOCATION.map((l) => `- ${l.place} — ${l.detail} (${l.time})`).join("\n")}
+
+## Pages
+${SEO_PAGES.map((p) => `- [${p.label}](${SITE_URL}${p.path})`).join("\n")}
+${BLOG_POSTS.map((b) => `- [${b.title}](${SITE_URL}${blogPath(b.slug)})`).join("\n")}
 
 ## Frequently asked questions
 ${FAQS.map((f) => `### ${f.q}\n${f.a}`).join("\n\n")}

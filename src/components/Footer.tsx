@@ -8,6 +8,7 @@ const EXPLORE: [string, string][] = [
   ["1 BHK Flats", "/1-bhk-flats-in-dombivli-east"],
   ["2 BHK Flats", "/2-bhk-flats-in-dombivli-east"],
   ["New Projects", "/new-projects-in-dombivli-east"],
+  ["Flats in Nilje", "/flats-in-nilje-dombivli-east"],
   ["Price & Plans", "/price"],
   ["Location", "/location"],
   ["Amenities", "/amenities"],

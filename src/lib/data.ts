@@ -74,11 +74,12 @@ export const POPULAR_SEARCHES: { label: string; href: string }[] = [
   { label: "1 BHK in Dombivli East", href: "/1-bhk-flats-in-dombivli-east" },
   { label: "2 BHK in Dombivli East", href: "/2-bhk-flats-in-dombivli-east" },
   { label: "New flats in Dombivli", href: "/new-projects-in-dombivli-east" },
-  { label: "Flats near Xperia Mall", href: "/location" },
+  { label: "Flats near Xperia Mall", href: "/flats-in-nilje-dombivli-east" },
+  { label: "1 BHK flat in Nilje", href: "/flats-in-nilje-dombivli-east" },
   { label: "Affordable flats in Dombivli East", href: "/1-bhk-flats-in-dombivli-east" },
   { label: "Ready to move flats in Dombivli", href: "/new-projects-in-dombivli-east" },
   { label: "Flat price in Dombivli East", href: "/price" },
-  { label: "Property in Nilje Dombivli", href: "/location" },
+  { label: "Property in Nilje Dombivli", href: "/flats-in-nilje-dombivli-east" },
   { label: "Vastu flats in Dombivli East", href: "/amenities" },
   { label: "Home for sale in Dombivli East", href: "/2-bhk-flats-in-dombivli-east" },
 ];
@@ -93,7 +94,8 @@ export const KEYWORD_VARIATIONS: string[] = [
   "ready to move flats in dombivli", "under construction flats in dombivli east",
   "affordable flats in dombivli east", "budget flats in dombivli", "cheap flats in dombivli east",
   "premium flats in dombivli east", "luxury apartments in dombivli east",
-  "flats near xperia mall", "property in nilje dombivli", "ghar in dombivli east",
+  "flats near xperia mall", "property in nilje dombivli", "flats in nilje", "1 bhk flat in nilje",
+  "new project in nilje dombivli", "flats near palava city", "ghar in dombivli east",
   "dombivli east me flat", "naya flat dombivli", "flat scheme in dombivli east",
   "dombivli east property rate", "1 bhk price in dombivli east", "2 bhk price in dombivli east",
 ];
@@ -188,11 +190,6 @@ export const TESTIMONIALS = [
   },
 ] as const;
 
-// Aggregate rating synced to the live Google Business Profile (4.8★, 6 reviews as of
-// Jun 2026). Keep this matched to the real Google total — update both numbers as new
-// reviews come in (honest values avoid Google's review-spam manual action).
-export const RATING = { value: "4.8", count: 6 } as const;
-
 // Times below are road-routed from the GEO pin (see NEARBY). Walk figures assume a
 // ~4.8 km/h pace; drive figures assume ~25 km/h on local roads.
 export const LOCATION = [
@@ -205,6 +202,16 @@ export const LOCATION = [
   { place: "Navi Mumbai & Thane", detail: "Quick inter-city access via Kalyan-Shil Road", time: "Connected" },
   { place: "Schools & Colleges", detail: "Ryan, Euro School, IRA Global & more in Palava", time: "Close" },
   { place: "Daily Markets & Retail", detail: "Everyday essentials within walking distance", time: "Close" },
+] as const;
+
+// Measured distance table, road-routed from the GEO pin (see NEARBY). Shared by every
+// landing page so the figures can never disagree between pages.
+export const DISTANCES = [
+  { place: "Nilje Railway Station", dist: "~1.0 km", time: "12 min walk" },
+  { place: "Shree Manav Kalyan Hospital", dist: "~0.35 km", time: "5 min walk" },
+  { place: "Xperia Mall & PVR Cinema", dist: "~1.95 km", time: "5 min drive" },
+  { place: "Kalyan–Shil Road", dist: "~1.7 km", time: "5 min drive" },
+  { place: "Dombivli Railway Station", dist: "~9.6 km", time: "25 min drive" },
 ] as const;
 
 export const INVESTMENT = [

@@ -3,11 +3,13 @@ import { SITE_URL } from "@/lib/data";
 import { SEO_PAGES, BLOG_POSTS, blogPath } from "@/lib/routes";
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const now = new Date();
+  // A fixed content date, not build time: lastmod that changes on every deploy
+  // without a content change teaches Google to ignore it. Bump on real edits.
+  const now = new Date("2026-10-08");
 
   // Per-path crawl priority — commercial config pages rank highest after home.
   const priorityFor = (path: string) => {
-    if (path.includes("bhk") || path.includes("new-projects")) return 0.9;
+    if (path.includes("bhk") || path.includes("new-projects") || path.includes("nilje")) return 0.9;
     if (path === "/blog") return 0.5;
     return 0.8;
   };

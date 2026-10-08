@@ -8,7 +8,7 @@ import FaqBlock from "@/components/FaqBlock";
 import RelatedPages from "@/components/RelatedPages";
 import CtaBand from "@/components/CtaBand";
 import { buildPageJsonLd, jsonLdScript } from "@/lib/seo";
-import { PROJECT, SITE_URL } from "@/lib/data";
+import { PROJECT, SITE_URL, DISTANCES } from "@/lib/data";
 
 const PATH = "/1-bhk-flats-in-dombivli-east";
 const DESCRIPTION = `1 BHK flats in Dombivli East from ${PROJECT.startingPrice} — ~434 sq ft carpet (≈₹6,910/sq ft), 12 min walk to Nilje station. New MahaRERA project (${PROJECT.rera}) by ${PROJECT.developer}. Price sheet & EMI on request.`;
@@ -85,15 +85,6 @@ const FAQS = [
     q: "When is possession of the 1 BHK, and how do I book one?",
     a: `For the current possession timeline and unit availability, contact our team — we share the live status rather than an outdated date. To book, call or WhatsApp ${PROJECT.phone} and we'll arrange a free site visit, walk you through the available 1 BHK units and share the full cost sheet with zero hidden charges.`,
   },
-];
-
-// Road-routed from the project pin — see the NEARBY constant in lib/data.ts.
-const DISTANCES = [
-  { place: "Nilje Railway Station", dist: "~1.0 km", time: "12 min walk" },
-  { place: "Shree Manav Kalyan Hospital", dist: "~0.35 km", time: "5 min walk" },
-  { place: "Xperia Mall & PVR Cinema", dist: "~1.95 km", time: "5 min drive" },
-  { place: "Kalyan–Shil Road", dist: "~1.7 km", time: "5 min drive" },
-  { place: "Dombivli Railway Station", dist: "~9.6 km", time: "25 min drive" },
 ];
 
 const SPECS = [

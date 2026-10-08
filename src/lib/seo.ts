@@ -5,11 +5,9 @@ import {
   FAQS,
   AMENITIES,
   CONFIGURATIONS,
-  TESTIMONIALS,
   SAME_AS,
   EMAIL,
   HOURS,
-  RATING,
   MAP_LINK,
 } from "./data";
 
@@ -139,20 +137,11 @@ export function buildJsonLd() {
     permittedUsage: "Residential",
   }));
 
-  const reviews = TESTIMONIALS.map((t) => ({
-    "@type": "Review",
-    author: { "@type": "Person", name: t.name },
-    reviewRating: { "@type": "Rating", ratingValue: "5", bestRating: "5", worstRating: "1" },
-    reviewBody: t.text,
-  }));
-
-  const aggregateRating = {
-    "@type": "AggregateRating",
-    ratingValue: RATING.value,
-    reviewCount: RATING.count,
-    bestRating: "5",
-    worstRating: "1",
-  };
+  // No Review / AggregateRating markup on purpose: on-site testimonials published by
+  // the seller are "self-serving reviews" under Google's review-snippet policy, and a
+  // rating copied from the Google Business Profile isn't allowed either (ratings must
+  // come from reviews collected on this site). Either risks a structured-data manual
+  // action. Real reviews live on GBP — grow them there.
 
   return {
     "@context": "https://schema.org",
@@ -195,8 +184,6 @@ export function buildJsonLd() {
           { "@type": "PropertyValue", name: "1 BHK Carpet Area", value: "434 sq ft" },
           { "@type": "PropertyValue", name: "2 BHK Carpet Area", value: "588 sq ft" },
         ],
-        aggregateRating,
-        review: reviews,
         offers: {
           "@type": "Offer",
           priceCurrency: "INR",
@@ -218,14 +205,12 @@ export function buildJsonLd() {
         },
       },
       faqNode(`${SITE_URL}/#faq`, [...FAQS]),
+      // Single-item trail: the homepage IS the root. Fragment URLs (#location, #top)
+      // made Google render a broken "› … › Blossom Residency" path in the SERP.
       {
         "@type": "BreadcrumbList",
         "@id": `${SITE_URL}/#breadcrumb`,
-        itemListElement: [
-          { "@type": "ListItem", position: 1, name: "Home", item: SITE_URL },
-          { "@type": "ListItem", position: 2, name: "Dombivli East", item: `${SITE_URL}/#location` },
-          { "@type": "ListItem", position: 3, name: PROJECT.name, item: `${SITE_URL}/#top` },
-        ],
+        itemListElement: [{ "@type": "ListItem", position: 1, name: PROJECT.name, item: SITE_URL }],
       },
     ],
   };

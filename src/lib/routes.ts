@@ -4,6 +4,7 @@ export const SEO_PAGES = [
   { path: "/1-bhk-flats-in-dombivli-east", label: "1 BHK Flats in Dombivli East" },
   { path: "/2-bhk-flats-in-dombivli-east", label: "2 BHK Flats in Dombivli East" },
   { path: "/new-projects-in-dombivli-east", label: "New Projects in Dombivli East" },
+  { path: "/flats-in-nilje-dombivli-east", label: "Flats in Nilje, Dombivli East" },
   { path: "/price", label: "Price & Payment Plan" },
   { path: "/location", label: "Location & Connectivity" },
   { path: "/amenities", label: "Amenities" },

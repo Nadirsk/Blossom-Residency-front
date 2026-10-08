@@ -19,7 +19,8 @@ const hanken = Hanken_Grotesk({
   display: "swap",
 });
 
-const title = `${PROJECT.name} by ${PROJECT.developer} | 1 & 2 BHK Flats in Dombivli East`;
+// Kept under ~60 chars so Google shows it whole: brand + money keyword + price hook.
+const title = `${PROJECT.name} | 1 & 2 BHK Flats in Dombivli East from ₹29.99L`;
 const titleTemplate = `%s | ${PROJECT.name} Dombivli`;
 const description = `${PROJECT.config} at ${PROJECT.location}. ${PROJECT.tower}. Starting ${PROJECT.startingPrice}. MahaRERA ${PROJECT.rera}.`;
 
